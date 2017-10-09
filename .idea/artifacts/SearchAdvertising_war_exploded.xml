@@ -1,0 +1,27 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SearchAdvertising:war exploded">
+    <output-path>$PROJECT_DIR$/target/SearchAdvertising</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SearchAdvertising" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: net.spy:spymemcached:2.12.1" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:5.1.40" />
+          <element id="library" level="project" name="Maven: org.json:json:20160807" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-analyzers-common:4.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-core:4.0.0" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queryparser:4.0.0-ALPHA" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-queries:4.0.0-ALPHA" />
+          <element id="library" level="project" name="Maven: org.apache.lucene:lucene-sandbox:4.0.0-ALPHA" />
+          <element id="library" level="project" name="Maven: jakarta-regexp:jakarta-regexp:1.4" />
+        </element>
+      </element>
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/target/SearchAdvertising/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="javaee-facet-resources" facet="SearchAdvertising/web/Web" />
+    </root>
+  </artifact>
+</component>
