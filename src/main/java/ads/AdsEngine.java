@@ -10,6 +10,7 @@ import java.util.List;
 import org.json.*;
 
 public class AdsEngine {
+
     private String mAdsDataFilePath;
     private String mBudgetFilePath;
     private IndexBuilder indexBuilder;
@@ -97,8 +98,9 @@ public class AdsEngine {
         //query understanding
         List<String> queryTerms = QueryParser.getInstance().QueryUnderstand(query);
         //select ads candidates
-        List<Ad> adsCandidates = AdsSelector.getInstance(mMemcachedServer, mMemcachedPortal,mysql_host, mysql_db,mysql_user, mysql_pass).selectAds(queryTerms);
-        //L0 filter by pClick, relevance score
+        List<Ad> adsCandidates = AdsSelector.getInstance(mMemcachedServer, mMemcachedPortal,mysql_host, mysql_db,mysql_user, mysql_pass)
+                                            .selectAds(queryTerms);
+        //L0 filter by pClick, relevance score 删掉pClick, relevance特别低的一些ad
         List<Ad> L0unfilteredAds = AdsFilter.getInstance().LevelZeroFilterAds(adsCandidates);
         System.out.println("L0unfilteredAds ads left = " + L0unfilteredAds.size());
 

@@ -18,12 +18,14 @@ public class AdsFilter {
         }
         return instance;
     }
+
     public List<Ad> LevelZeroFilterAds(List<Ad> adsCandidates)
     {
+        // 如果candidate个数少于mimNumOfAds，则不过滤，直接返回
         if(adsCandidates.size() <= mimNumOfAds)
             return adsCandidates;
 
-        List<Ad> unfilteredAds = new ArrayList<Ad>();
+        List<Ad> unfilteredAds = new ArrayList<>();
         for(Ad ad : adsCandidates)
         {
             if(ad.pClick >= pClickThreshold && ad.relevanceScore > relevanceScoreThreshold)
@@ -33,12 +35,14 @@ public class AdsFilter {
         }
         return unfilteredAds;
     }
+
+    // get top k
     public List<Ad> LevelOneFilterAds(List<Ad> adsCandidates,int k)
     {
         if(adsCandidates.size() <= mimNumOfAds)
             return adsCandidates;
 
-        List<Ad> unfilteredAds = new ArrayList<Ad>();
+        List<Ad> unfilteredAds = new ArrayList<>();
         for(int i = 0; i < Math.min(k, adsCandidates.size());i++)
         {
             unfilteredAds.add(adsCandidates.get(i));

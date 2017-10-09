@@ -88,6 +88,8 @@ public class SearchAds extends HttpServlet {
         List<Ad> adsCandidates = adsEngine.selectAds(query);
         String result = uiTemplate;
         String list = "";
+
+        // render web page
         for(Ad ad : adsCandidates)
         {
             System.out.println("final selected ad id = " + ad.adId);

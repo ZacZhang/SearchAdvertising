@@ -7,22 +7,22 @@
 
   <context-param>
     <param-name>adsDataFilePath</param-name>
-    <param-value>/Users/jiayangan/project/SearchAds/data/deduped/ads7.txt</param-value>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/resources/clean_ads.txt</param-value>
   </context-param>
 
   <context-param>
     <param-name>budgetDataFilePath</param-name>
-    <param-value>/Users/jiayangan/project/SearchAds/data/deduped/budget.txt</param-value>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/resources/budget.txt</param-value>
   </context-param>
 
   <context-param>
     <param-name>uiTemplateFilePath</param-name>
-    <param-value>/Users/jiayangan/project/SearchAds/ui.html</param-value>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/webapp/ui.html</param-value>
   </context-param>
 
   <context-param>
     <param-name>adTemplateFilePath</param-name>
-    <param-value>/Users/jiayangan/project/SearchAds/item.html</param-value>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/webapp/item.html</param-value>
   </context-param>
 
   <context-param>

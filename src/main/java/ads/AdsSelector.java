@@ -32,49 +32,42 @@ public class AdsSelector {
         }
         return instance;
     }
+
+    // 选出至少有一个term match的ads
     public List<Ad> selectAds(List<String> queryTerms)
     {
-        List<Ad> adList = new ArrayList<Ad>();
-        HashMap<Long,Integer> matchedAds = new HashMap<Long,Integer>();
+        List<Ad> adList = new ArrayList<>();
+        // key是ad id, value是这个ad id 有几个term与query里的term match
+        HashMap<Long,Integer> matchedAds = new HashMap<>();
         try {
             MemcachedClient cache = new MemcachedClient(new InetSocketAddress(mMemcachedServer,mMemcachedPortal));
 
-            for(String queryTerm : queryTerms)
-            {
+            for(String queryTerm : queryTerms) {
                 System.out.println("selectAds queryTerm = " + queryTerm);
                 @SuppressWarnings("unchecked")
                 Set<Long>  adIdList = (Set<Long>)cache.get(queryTerm);
-                if(adIdList != null && adIdList.size() > 0)
-                {
-                    for(Object adId : adIdList)
-                    {
+                if(adIdList != null && adIdList.size() > 0) {
+                    for(Object adId : adIdList) {
                         Long key = (Long)adId;
-                        if(matchedAds.containsKey(key))
-                        {
+                        if(matchedAds.containsKey(key)) {
                             int count = matchedAds.get(key) + 1;
                             matchedAds.put(key, count);
-                        }
-                        else
-                        {
+                        } else {
                             matchedAds.put(key, 1);
                         }
                     }
                 }
             }
-            for(Long adId:matchedAds.keySet())
-            {
+
+            for(Long adId:matchedAds.keySet()) {
                 System.out.println("selectAds adId = " + adId);
                 MySQLAccess mysql = new MySQLAccess(mysql_host, mysql_db, mysql_user, mysql_pass);
-                Ad  ad = mysql.getAdData(adId);
-                double relevanceScore = (double) (matchedAds.get(adId) * 1.0 / ad.keyWords.size());
-                ad.relevanceScore = relevanceScore;
+                Ad ad = mysql.getAdData(adId);
+                ad.relevanceScore = matchedAds.get(adId) * 1.0 / ad.keyWords.size();
                 System.out.println("selectAds pClick = " + ad.pClick);
                 System.out.println("selectAds relevanceScore = " + ad.relevanceScore);
                 adList.add(ad);
             }
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

@@ -13,6 +13,7 @@ public class AdsCampaignManager {
     private String mysql_user;
     private String mysql_pass;
     private static double minPriceThreshold = 0.0;
+
     protected AdsCampaignManager(String mysqlHost,String mysqlDb,String user,String pass)
     {
         mysql_host = mysqlHost;
@@ -20,16 +21,19 @@ public class AdsCampaignManager {
         mysql_user = user;
         mysql_pass = pass;
     }
+
     public static AdsCampaignManager getInstance(String mysqlHost,String mysqlDb,String user,String pass) {
         if(instance == null) {
             instance = new AdsCampaignManager(mysqlHost,mysqlDb,user,pass);
         }
         return instance;
     }
+
+    // 最后返回的ads要求属于不同的campaign
     public  List<Ad> DedupeByCampaignId(List<Ad> adsCandidates)
     {
-        List<Ad> dedupedAds = new ArrayList<Ad>();
-        HashSet<Long> campaignIdSet = new HashSet<Long>();
+        List<Ad> dedupedAds = new ArrayList<>();
+        HashSet<Long> campaignIdSet = new HashSet<>();
         for(Ad ad : adsCandidates)
         {
             if(!campaignIdSet.contains(ad.campaignId))
@@ -40,14 +44,13 @@ public class AdsCampaignManager {
         }
         return dedupedAds;
     }
+
     public List<Ad> ApplyBudget(List<Ad> adsCandidates)
     {
-        List<Ad> ads = new ArrayList<Ad>();
-        try
-        {
+        List<Ad> ads = new ArrayList<>();
+        try {
             MySQLAccess mysql = new MySQLAccess(mysql_host, mysql_db, mysql_user, mysql_pass);
-            for(int i = 0; i < adsCandidates.size()  - 1;i++)
-            {
+            for(int i = 0; i < adsCandidates.size() - 1;i++) {
                 Ad ad = adsCandidates.get(i);
                 Long campaignId = ad.campaignId;
                 System.out.println("campaignId: " + campaignId);
@@ -56,16 +59,12 @@ public class AdsCampaignManager {
                 System.out.println("AdsCampaignManager campaignId= " + campaignId);
                 System.out.println("AdsCampaignManager budget left = " + budget);
 
-                if(ad.costPerClick <= budget && ad.costPerClick >= minPriceThreshold)
-                {
+                if(ad.costPerClick <= budget && ad.costPerClick >= minPriceThreshold) {
                     ads.add(ad);
                     budget = budget - ad.costPerClick;
                     mysql.updateCampaignData(campaignId, budget);
                 }
             }
-        }catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
