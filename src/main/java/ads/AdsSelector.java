@@ -17,6 +17,7 @@ public class AdsSelector {
     private String mysql_db;
     private String mysql_user;
     private String mysql_pass;
+
     protected AdsSelector(String memcachedServer,int memcachedPortal,String mysqlHost,String mysqlDb,String user,String pass)
     {
         mMemcachedServer = memcachedServer;

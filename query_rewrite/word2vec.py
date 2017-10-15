@@ -35,7 +35,7 @@ for word in vec.keys():
 
 synonyms_data.close()
 
-#print vec
+#debug - print vec
 test_data = [ "furniture", "shaver", "toddler", "sport","xbox", "led","organizer"]
 for w in test_data:
     synonyms = model.findSynonyms(w, 10)
@@ -43,5 +43,5 @@ for w in test_data:
     for word, cosine_distance in synonyms:
         print("{}: {}".format(word, cosine_distance))
 
-model.save(sc, "../data/model/word2vec_0502_03")
+model.save(sc, "word2vec_model")
 sc.stop()
