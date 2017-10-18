@@ -15,6 +15,16 @@
     <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/resources/budget.txt</param-value>
   </context-param>
 
+    <context-param>
+        <param-name>ctrLogisticRegressionDataFilePath</param-name>
+        <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/model/ctrLogisticRegression.txt</param-value>
+    </context-param>
+
+    <context-param>
+        <param-name>ctrGBDTDataFilePath</param-name>
+        <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/model/</param-value>
+    </context-param>
+
   <context-param>
     <param-name>uiTemplateFilePath</param-name>
     <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/webapp/ui.html</param-value>
