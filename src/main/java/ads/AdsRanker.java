@@ -1,4 +1,4 @@
-package adindex;
+package ads;
 
 import java.util.Collections;
 import java.util.Comparator;
@@ -19,24 +19,20 @@ public class AdsRanker {
         return instance;
     }
 
-    public List<Ad> rankAds(List<Ad> adsCandidates)
-    {
+    public List<Ad> rankAds(List<Ad> adsCandidates) {
         for(Ad ad : adsCandidates) {
             ad.qualityScore = d * ad.pClick  +  (1.0 - d) * ad.relevanceScore;
             ad.rankScore = ad.qualityScore * ad.bidPrice;
         }
+
         //sort by rank score
         Collections.sort(adsCandidates, new Comparator<Ad>() {
             @Override
             public int compare(Ad ad2, Ad ad1) {
-                if (ad1.rankScore < ad2.rankScore)
-                    return -1;
-                else if(ad1.rankScore > ad2.rankScore)
-                    return 1;
-                else
-                    return 0;
+                return Double.compare(ad1.rankScore, ad2.rankScore);
             }
         });
+
         for(Ad ad : adsCandidates) {
             System.out.println("ranker rankScore = " + ad.rankScore);
         }

@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.HashSet;
 import java.util.Set;
 
-import adindex.AdsRanker;
 import org.json.*;
 
 import adindex.AdsIndexClientWorker;

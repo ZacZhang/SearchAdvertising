@@ -36,7 +36,7 @@ public class AdsIndexClient {
         AdsRequest.Builder request = AdsRequest.newBuilder();
         System.out.println("queryList.size() : " + queryList.size());
         for(int i = 0; i < queryList.size();i++) {
-            io.bittiger.adindex.Query q = queryList.get(i);
+            adindex.Query q = queryList.get(i);
             System.out.println("q.getTermCount() : " + q.getTermCount());
             for(int index = 0; index < q.getTermCount();index++) {
                 System.out.println("preparing request term : " + q.getTerm(index));
