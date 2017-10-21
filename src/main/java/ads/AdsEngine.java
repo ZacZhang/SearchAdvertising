@@ -34,8 +34,8 @@ public class AdsEngine {
     private int indexServerTimeout; //ms
 
     public AdsEngine(String adsDataFilePath, String budgetDataFilePath,String logistic_reg_model_file,
-                     String gbdt_model_path, String memcachedServer,int memcachedPortal,int featureMemcachedPortal,int synonymsMemcachedPortal,
-                     int tfMemcachedPortal, int dfMemcachedPortal,
+                     String gbdt_model_path, String memcachedServer,int memcachedPortal,int featureMemcachedPortal,
+                     int synonymsMemcachedPortal, int tfMemcachedPortal, int dfMemcachedPortal,
                      String mysqlHost,String mysqlDb,String user,String pass)
     {
         mAdsDataFilePath = adsDataFilePath;
@@ -57,8 +57,7 @@ public class AdsEngine {
         indexBuilder = new IndexBuilder(memcachedServer,memcachedPortal,mysql_host,mysql_db,mysql_user,mysql_pass);
     }
 
-    public Boolean init()
-    {
+    public Boolean init() {
         //load ads data
         try (BufferedReader brAd = new BufferedReader(new FileReader(mAdsDataFilePath))) {
             String line;
@@ -81,8 +80,7 @@ public class AdsEngine {
                 ad.description = adJson.isNull("description") ? "" : adJson.getString("description");
                 ad.keyWords = new ArrayList<String>();
                 JSONArray keyWords = adJson.isNull("keyWords") ? null :  adJson.getJSONArray("keyWords");
-                for(int j = 0; j < keyWords.length();j++)
-                {
+                for(int j = 0; j < keyWords.length();j++) {
                     ad.keyWords.add(keyWords.getString(j));
                 }
 //				if(!indexBuilder.buildInvertIndex(ad)) {
@@ -110,8 +108,7 @@ public class AdsEngine {
                 Campaign camp = new Campaign();
                 camp.campaignId = campaignId;
                 camp.budget = budget;
-                if(!indexBuilder.updateBudget(camp))
-                {
+                if(!indexBuilder.updateBudget(camp)) {
                     //log
                 }
             }

@@ -83,8 +83,7 @@ public class AdsSelector {
             double dfScore = Math.log10(numDocs * 1.0 / (dfVal + 1));
             double tfScore = Math.sqrt(tfVal);
             double norm = Math.sqrt(docLength);
-            double tfidfScore = (dfScore*tfScore) / norm;
-            return tfidfScore;
+            return (dfScore*tfScore) / norm;
         }
         return 0.0;
     }
@@ -106,31 +105,25 @@ public class AdsSelector {
             MemcachedClient cache = new MemcachedClient(new InetSocketAddress(mMemcachedServer,mMemcachedPortal));
 
             // keywords term跟query term中是否有一样的，有则把那个ad作为candidate
-            for(String queryTerm : queryTerms)
-            {
+            for(String queryTerm : queryTerms) {
                 System.out.println("selectAds queryTerm = " + queryTerm);
                 @SuppressWarnings("unchecked")
                 Set<Long>  adIdList = (Set<Long>)cache.get(queryTerm);
-                if(adIdList != null && adIdList.size() > 0)
-                {
-                    for(Object adId : adIdList)
-                    {
+                if(adIdList != null && adIdList.size() > 0) {
+                    for(Object adId : adIdList) {
                         Long key = (Long)adId;
-                        if(matchedAds.containsKey(key))
-                        {
+                        if(matchedAds.containsKey(key)) {
                             int count = matchedAds.get(key) + 1;
                             matchedAds.put(key, count);
-                        }
-                        else
-                        {
+                        } else {
                             matchedAds.put(key, 1);
                         }
                     }
                 }
             }
 
-            for(Long adId : matchedAds.keySet())
-            {
+            // 去mysql取detail信息
+            for(Long adId : matchedAds.keySet()) {
                 System.out.println("selectAds adId = " + adId);
                 MySQLAccess mysql = new MySQLAccess(mysql_host, mysql_db, mysql_user, mysql_pass);
                 Ad ad = mysql.getAdData(adId);
@@ -155,9 +148,6 @@ public class AdsSelector {
                     predictCTR(ad, queryTerms, device_id, device_ip, query_category, featureCacheClient);
                 }
             }
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
         } catch (Exception e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
