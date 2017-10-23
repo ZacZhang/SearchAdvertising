@@ -4,6 +4,7 @@ import java.util.List;
 
 public class AdPricing {
     private static AdPricing instance = null;
+
     protected AdPricing() {
 
     }

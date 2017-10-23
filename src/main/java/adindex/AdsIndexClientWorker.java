@@ -10,12 +10,15 @@ public class AdsIndexClientWorker extends Thread{
     private String adsIndexServer;
     private int adsIndexServerPortal;
     private List<adindex.Query> queryList;
-    public AdsIndexClientWorker(List<adindex.Query> queryList, String adsIndexServer,int adsIndexServerPortal,AdsSelectionResult result) {
+
+    public AdsIndexClientWorker(List<adindex.Query> queryList, String adsIndexServer, int adsIndexServerPortal,
+                                AdsSelectionResult result) {
         this.result = result;
         this.queryList = queryList;
         this.adsIndexServer = adsIndexServer;
         this.adsIndexServerPortal = adsIndexServerPortal;
     }
+
     public void start()   {
         adindex.AdsIndexClient adsIndexClient = new adindex.AdsIndexClient(adsIndexServer,adsIndexServerPortal);
         //TODO : timeout and return partial list of ads 可以在这里设置timeout，时间到了如果没有得到全部ads，就先返会部分ads

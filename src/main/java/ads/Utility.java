@@ -23,6 +23,7 @@ public class Utility {
             "most,must,my,neither,no,nor,not,of,off,often,on,only,or,other,our,own,rather,said,say,says,she,should," +
             "since,so,some,than,that,the,their,them,then,there,these,they,this,tis,to,too,twas,us,wants,was,we,were," +
             "what,when,where,which,while,who,whom,why,will,with,would,yet,you,your";
+
     private static CharArraySet getStopwords(String stopwords) {
         List<String> stopwordsList = new ArrayList<>();
         for (String stop : stopwords.split(",")) {
@@ -57,14 +58,13 @@ public class Utility {
                 String term = charTermAttribute.toString();
 
                 tokens.add(term);
-                sb.append(term + " ");
+                sb.append(term).append(" ");
             }
             tokenStream.end();
             tokenStream.close();
 
             tokenizer.close();
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         System.out.println("cleaned Tokens ="+ sb.toString());
@@ -72,7 +72,6 @@ public class Utility {
     }
 
     public static double sigmoid(double x ) {
-        double sig = 1 / (1 + Math.exp(-x));
-        return sig;
+        return 1 / (1 + Math.exp(-x));
     }
 }

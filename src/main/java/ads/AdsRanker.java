@@ -21,7 +21,7 @@ public class AdsRanker {
 
     public List<Ad> rankAds(List<Ad> adsCandidates) {
         for(Ad ad : adsCandidates) {
-            ad.qualityScore = d * ad.pClick  +  (1.0 - d) * ad.relevanceScore;
+            ad.qualityScore = d * ad.pClick + (1.0 - d) * ad.relevanceScore;
             ad.rankScore = ad.qualityScore * ad.bidPrice;
         }
 

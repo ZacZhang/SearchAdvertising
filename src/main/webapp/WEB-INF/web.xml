@@ -1,29 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
-  <display-name>SearchAds</display-name>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+  <display-name>SearchAdvertising</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
   </welcome-file-list>
 
   <context-param>
     <param-name>adsDataFilePath</param-name>
-    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/resources/clean_ads.txt</param-value>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/ads_part1.txt</param-value>
   </context-param>
 
   <context-param>
     <param-name>budgetDataFilePath</param-name>
-    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/resources/budget.txt</param-value>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/budget.txt</param-value>
   </context-param>
 
-    <context-param>
-        <param-name>ctrLogisticRegressionDataFilePath</param-name>
-        <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/model/ctrLogisticRegression.txt</param-value>
-    </context-param>
+  <context-param>
+    <param-name>ctrLogisticRegressionDataFilePath</param-name>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/model/ctrLogisticRegression.txt</param-value>
+  </context-param>
 
-    <context-param>
-        <param-name>ctrGBDTDataFilePath</param-name>
-        <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/model/</param-value>
-    </context-param>
+  <context-param>
+    <param-name>ctrGBDTDataFilePath</param-name>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/model/</param-value>
+  </context-param>
 
   <context-param>
     <param-name>uiTemplateFilePath</param-name>
@@ -46,13 +49,33 @@
   </context-param>
 
   <context-param>
+    <param-name>featureMemcachedPortal</param-name>
+    <param-value>11218</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>tfMemcachedPortal</param-name>
+    <param-value>11220</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>dfMemcachedPortal</param-name>
+    <param-value>11221</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>synonymsMemcachedPortal</param-name>
+    <param-value>11219</param-value>
+  </context-param>
+
+  <context-param>
     <param-name>mysqlHost</param-name>
     <param-value>127.0.0.1:3306</param-value>
   </context-param>
 
   <context-param>
     <param-name>mysqlDB</param-name>
-    <param-value>searchads</param-value>
+    <param-value>SearchAdvertising</param-value>
   </context-param>
 
   <context-param>
@@ -62,17 +85,17 @@
 
   <context-param>
     <param-name>mysqlPass</param-name>
-    <param-value>1234</param-value>
+    <param-value>root</param-value>
   </context-param>
 
   <servlet>
-    <servlet-name>SearchAds</servlet-name>
-    <servlet-class>ads.SearchAds</servlet-class>
+      <servlet-name>SearchAdvertising</servlet-name>
+      <servlet-class>ads.SearchAdvertising</servlet-class>
   </servlet>
-
+    
   <servlet-mapping>
-    <servlet-name>SearchAds</servlet-name>
-    <url-pattern>/SearchAds</url-pattern>
+      <servlet-name>SearchAdvertising</servlet-name>
+      <url-pattern>/SearchAdvertising</url-pattern>
   </servlet-mapping>
 
 </web-app>

@@ -3,11 +3,11 @@ package adindex;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 import io.grpc.StatusRuntimeException;
+
+import java.util.List;
 import java.util.concurrent.TimeUnit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import java.util.List;
-import java.util.ArrayList;
 
 // 向index server取数据
 public class AdsIndexClient {
@@ -15,6 +15,8 @@ public class AdsIndexClient {
 
     private final ManagedChannel channel;
     private final AdsIndexGrpc.AdsIndexBlockingStub blockingStub;
+
+    // 指明向哪个index server取数据
     public AdsIndexClient(String host, int port) {
         this(ManagedChannelBuilder.forAddress(host, port)
                 // Channels are secure by default (via SSL/TLS). For the example we disable TLS to avoid
@@ -35,10 +37,9 @@ public class AdsIndexClient {
     public java.util.List<adindex.Ad> GetAds(java.util.List<adindex.Query> queryList) {
         AdsRequest.Builder request = AdsRequest.newBuilder();
         System.out.println("queryList.size() : " + queryList.size());
-        for(int i = 0; i < queryList.size();i++) {
-            adindex.Query q = queryList.get(i);
+        for (Query q : queryList) {
             System.out.println("q.getTermCount() : " + q.getTermCount());
-            for(int index = 0; index < q.getTermCount();index++) {
+            for (int index = 0; index < q.getTermCount(); index++) {
                 System.out.println("preparing request term : " + q.getTerm(index));
             }
             request.addQuery(q);
@@ -47,7 +48,7 @@ public class AdsIndexClient {
         try {
             System.out.println("sending request...");
             reply = blockingStub.getAds(request.build());
-            List<adindex.Ad> adList = new ArrayList<adindex.Ad>();
+            List<adindex.Ad> adList;
             adList = reply.getAdList();
             return adList;
         } catch (StatusRuntimeException e) {

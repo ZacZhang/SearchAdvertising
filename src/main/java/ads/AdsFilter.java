@@ -9,8 +9,7 @@ public class AdsFilter {
     private static double relevanceScoreThreshold = 0.01;
     private static int mimNumOfAds = 4;
 
-    protected AdsFilter()
-    {
+    protected AdsFilter() {
 
     }
 
@@ -21,8 +20,7 @@ public class AdsFilter {
         return instance;
     }
 
-    public List<Ad> LevelZeroFilterAds(List<Ad> adsCandidates)
-    {
+    public List<Ad> LevelZeroFilterAds(List<Ad> adsCandidates) {
         // 如果candidate个数少于mimNumOfAds，则不过滤，直接返回
         if(adsCandidates.size() <= mimNumOfAds) {
             return adsCandidates;
@@ -38,8 +36,7 @@ public class AdsFilter {
     }
 
     // get top k
-    public List<Ad> LevelOneFilterAds(List<Ad> adsCandidates,int k)
-    {
+    public List<Ad> LevelOneFilterAds(List<Ad> adsCandidates,int k) {
         if(adsCandidates.size() <= mimNumOfAds)
             return adsCandidates;
 

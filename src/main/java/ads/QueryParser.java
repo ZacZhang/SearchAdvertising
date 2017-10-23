@@ -52,7 +52,6 @@ public class QueryParser {
                 res.add(tokens);
             }
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return res;

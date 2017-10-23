@@ -18,8 +18,7 @@ http://www.wordstream.com/blog/ws/2013/10/24/adwords-ad-rank-algorithm
 */
 public class AdsServer {
     public static void main(String[] args) throws IOException {
-        if(args.length < 4)
-        {
+        if(args.length < 4) {
             System.out.println("Usage: AdsServer <adsDataFilePath> <budgetDataFilePath> <memcachedServer> <memcachedPortal>");
             System.exit(0);
         }
@@ -28,26 +27,26 @@ public class AdsServer {
         String memcachedServer = args[2];
         int memcachedPortal = Integer.parseInt(args[3]);
         String mysql_host = "127.0.0.1:3306";
-        String mysql_db = "searchads";
+        String mysql_db = "SearchAdvertising";
         String mysql_user = "root";
-        String mysql_pass = "bittiger2017";
-        AdsEngine adsEngine = new AdsEngine(adsDataFilePath,budgetDataFilePath,"","",memcachedServer,memcachedPortal,11218,11219,11220,11221, mysql_host,mysql_db,mysql_user,mysql_pass);
-        if(adsEngine.init())
-        {
-            System.out.println("Ready to take quey");
+        String mysql_pass = "root";
+        AdsEngine adsEngine = new AdsEngine(adsDataFilePath, budgetDataFilePath, "", "",
+                                            memcachedServer, memcachedPortal, 11218,
+                                            11219, 11220, 11221,
+                                            mysql_host, mysql_db, mysql_user, mysql_pass);
+        if(adsEngine.init()) {
+            System.out.println("Ready to take query");
             try{
                 BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
                 String query;
                 while((query=br.readLine())!=null){
                     //System.out.println(query);
                     List<Ad> adsCandidates = adsEngine.selectAds(query,"","","");
-                    for(Ad ad : adsCandidates)
-                    {
+                    for(Ad ad : adsCandidates) {
                         System.out.println("final selected ad id = " + ad.adId);
                         System.out.println("final selected ad rank score = " + ad.rankScore);
                     }
                 }
-
             }catch(IOException io){
                 io.printStackTrace();
             }

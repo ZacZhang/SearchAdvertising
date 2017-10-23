@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://java.sun.com/xml/ns/javaee"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         id="WebApp_ID" version="3.0">
+  <display-name>SearchAdvertising</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+
+  <context-param>
+    <param-name>adsDataFilePath</param-name>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/ads_part1.txt</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>budgetDataFilePath</param-name>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/budget.txt</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>ctrLogisticRegressionDataFilePath</param-name>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/model/ctrLogisticRegression.txt</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>ctrGBDTDataFilePath</param-name>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/model/</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>uiTemplateFilePath</param-name>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/webapp/ui.html</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>adTemplateFilePath</param-name>
+    <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/webapp/item.html</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>memcachedServer</param-name>
+    <param-value>127.0.0.1</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>memcachedPortal</param-name>
+    <param-value>11211</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>featureMemcachedPortal</param-name>
+    <param-value>11218</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>tfMemcachedPortal</param-name>
+    <param-value>11220</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>dfMemcachedPortal</param-name>
+    <param-value>11221</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>synonymsMemcachedPortal</param-name>
+    <param-value>11219</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>mysqlHost</param-name>
+    <param-value>127.0.0.1:3306</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>mysqlDB</param-name>
+    <param-value>SearchAdvertising</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>mysqlUser</param-name>
+    <param-value>root</param-value>
+  </context-param>
+
+  <context-param>
+    <param-name>mysqlPass</param-name>
+    <param-value>root</param-value>
+  </context-param>
+
+  <servlet>
+      <servlet-name>SearchAdvertising</servlet-name>
+      <servlet-class>ads.SearchAdvertising</servlet-class>
+  </servlet>
+    
+  <servlet-mapping>
+      <servlet-name>SearchAdvertising</servlet-name>
+      <url-pattern>/SearchAdvertising</url-pattern>
+  </servlet-mapping>
+
+</web-app>

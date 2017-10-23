@@ -29,7 +29,9 @@ public class AdsSelector {
     MemcachedClient tfCacheClient;
     MemcachedClient dfCacheClient;
 
-    protected AdsSelector(String memcachedServer,int memcachedPortal,int featureMemcachedPortal,int tfMemcachedPortal, int dfMemcachedPortal, String logistic_reg_model_file, String gbdt_model_path,String mysqlHost,String mysqlDb,String user,String pass)
+    protected AdsSelector(String memcachedServer, int memcachedPortal, int featureMemcachedPortal,int tfMemcachedPortal,
+                          int dfMemcachedPortal, String logistic_reg_model_file, String gbdt_model_path, String mysqlHost,
+                          String mysqlDb,String user,String pass)
     {
         mMemcachedServer = memcachedServer;
         mMemcachedPortal = memcachedPortal;
@@ -46,21 +48,25 @@ public class AdsSelector {
         enableTFIDF = true;
         String tf_address = mMemcachedServer + ":" + mTFMemcachedPortal;
         String df_address = mMemcachedServer + ":" + mDFMemcachedPortal;
-        try
-        {
+        try {
             //tfCacheClient = new MemcachedClient(new ConnectionFactoryBuilder().setDaemon(true).setFailureMode(FailureMode.Retry).build(), AddrUtil.getAddresses(tf_address));
             tfCacheClient = new MemcachedClient(new InetSocketAddress(mMemcachedServer,mTFMemcachedPortal));
 
-            dfCacheClient = new MemcachedClient(new ConnectionFactoryBuilder().setDaemon(true).setFailureMode(FailureMode.Retry).build(), AddrUtil.getAddresses(df_address));
+            dfCacheClient = new MemcachedClient(new ConnectionFactoryBuilder()
+                                                .setDaemon(true)
+                                                .setFailureMode(FailureMode.Retry)
+                                                .build(), AddrUtil.getAddresses(df_address));
         } catch (IOException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
     }
 
-    public static AdsSelector getInstance(String memcachedServer,int memcachedPortal,int featureMemcachedPortal,int tfMemcachedPortal, int dfMemcachedPortal, String logistic_reg_model_file, String gbdt_model_path,String mysqlHost,String mysqlDb,String user,String pass) {
+    public static AdsSelector getInstance(String memcachedServer, int memcachedPortal, int featureMemcachedPortal,
+                                          int tfMemcachedPortal, int dfMemcachedPortal, String logistic_reg_model_file,
+                                          String gbdt_model_path, String mysqlHost, String mysqlDb, String user, String pass) {
         if(instance == null) {
-            instance = new AdsSelector(memcachedServer, memcachedPortal,featureMemcachedPortal, tfMemcachedPortal,dfMemcachedPortal,logistic_reg_model_file,gbdt_model_path, mysqlHost,mysqlDb,user,pass);
+            instance = new AdsSelector(memcachedServer, memcachedPortal, featureMemcachedPortal, tfMemcachedPortal,
+                    dfMemcachedPortal, logistic_reg_model_file, gbdt_model_path, mysqlHost, mysqlDb, user,pass);
         }
         return instance;
     }
@@ -97,12 +103,12 @@ public class AdsSelector {
         return relevanceScore;
     }
 
-    public List<Ad> selectAds(List<String> queryTerms,String device_id, String device_ip, String query_category)
+    public List<Ad> selectAds(List<String> queryTerms, String device_id, String device_ip, String query_category)
     {
         List<Ad> adList = new ArrayList<>();
-        HashMap<Long,Integer> matchedAds = new HashMap<>();
+        HashMap<Long, Integer> matchedAds = new HashMap<>();
         try {
-            MemcachedClient cache = new MemcachedClient(new InetSocketAddress(mMemcachedServer,mMemcachedPortal));
+            MemcachedClient cache = new MemcachedClient(new InetSocketAddress(mMemcachedServer, mMemcachedPortal));
 
             // keywords term跟query term中是否有一样的，有则把那个ad作为candidate
             for(String queryTerm : queryTerms) {
@@ -131,7 +137,6 @@ public class AdsSelector {
                 double relevanceScoreTFIDF = getRelevanceScoreByTFIDF(adId, ad.keyWords.size(), queryTerms);
                 if(enableTFIDF) {
                     ad.relevanceScore = relevanceScoreTFIDF;
-
                 } else {
                     ad.relevanceScore = relevanceScore;
                 }
@@ -142,14 +147,14 @@ public class AdsSelector {
 
             if (enable_pClick) {
                 //calculate pClick
-                MemcachedClient featureCacheClient = new MemcachedClient(new InetSocketAddress(mMemcachedServer,mFeatureMemcachedPortal));
+                MemcachedClient featureCacheClient = new MemcachedClient(new InetSocketAddress(mMemcachedServer,
+                        mFeatureMemcachedPortal));
                 System.out.println("mFeatureMemcachedPortal = " + mFeatureMemcachedPortal);
                 for(Ad ad : adList) {
                     predictCTR(ad, queryTerms, device_id, device_ip, query_category, featureCacheClient);
                 }
             }
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
 
@@ -157,7 +162,8 @@ public class AdsSelector {
     }
 
     // 预测当前用户是否会点这个广告，每个feature都从memcached读出来，然后把feature送到CTRModel里面进行预测
-    private void predictCTR(Ad ad, List<String> queryTerms, String device_id, String device_ip, String query_category, MemcachedClient featureCacheClient) {
+    private void predictCTR(Ad ad, List<String> queryTerms, String device_id, String device_ip, String query_category,
+                            MemcachedClient featureCacheClient) {
         //construct features, note that the order of features must be as follows
         ArrayList<Double> features = new ArrayList<>();
 
@@ -166,7 +172,7 @@ public class AdsSelector {
         @SuppressWarnings("unchecked")
         String device_ip_click_val_str = (String)featureCacheClient.get(device_ip_click_key);
         Double device_ip_click_val = 0.0;
-        if (device_ip_click_val_str != null && device_ip_click_val_str!= "") {
+        if (device_ip_click_val_str != null && !Objects.equals(device_ip_click_val_str, "")) {
             device_ip_click_val = Double.parseDouble(device_ip_click_val_str);
         }
         features.add(device_ip_click_val);
@@ -179,7 +185,7 @@ public class AdsSelector {
         @SuppressWarnings("unchecked")
         String device_ip_impression_val_str = (String)featureCacheClient.get(device_ip_impression_key);
         Double device_ip_impression_val = 0.0;
-        if (device_ip_impression_val_str != null && device_ip_impression_val_str!= "") {
+        if (device_ip_impression_val_str != null && !Objects.equals(device_ip_impression_val_str, "")) {
             device_ip_impression_val = Double.parseDouble(device_ip_impression_val_str);
         }
         features.add(device_ip_impression_val);
@@ -192,7 +198,7 @@ public class AdsSelector {
         @SuppressWarnings("unchecked")
         String device_id_click_val_str = (String)featureCacheClient.get(device_id_click_key);
         Double device_id_click_val = 0.0;
-        if (device_id_click_val_str != null && device_id_click_val_str!= "") {
+        if (device_id_click_val_str != null && !Objects.equals(device_id_click_val_str, "")) {
             device_id_click_val = Double.parseDouble(device_id_click_val_str);
         }
         features.add(device_id_click_val);
@@ -205,7 +211,7 @@ public class AdsSelector {
         @SuppressWarnings("unchecked")
         String device_id_impression_val_str = (String)featureCacheClient.get(device_id_impression_key);
         Double device_id_impression_val = 0.0;
-        if (device_id_impression_val_str != null && device_id_impression_val_str!= "") {
+        if (device_id_impression_val_str != null && !Objects.equals(device_id_impression_val_str, "")) {
             device_id_impression_val = Double.parseDouble(device_id_impression_val_str);
         }
         features.add(device_id_impression_val);
@@ -217,7 +223,7 @@ public class AdsSelector {
         @SuppressWarnings("unchecked")
         String ad_id_click_val_str = (String)featureCacheClient.get(ad_id_click_key);
         Double ad_id_click_val = 0.0;
-        if (ad_id_click_val_str != null && ad_id_click_val_str!= "") {
+        if (ad_id_click_val_str != null && !Objects.equals(ad_id_click_val_str, "")) {
             ad_id_click_val = Double.parseDouble(ad_id_click_val_str);
         }
         features.add(ad_id_click_val);
@@ -227,7 +233,7 @@ public class AdsSelector {
         @SuppressWarnings("unchecked")
         String ad_id_impression_val_str = (String)featureCacheClient.get(ad_id_impression_key);
         Double ad_id_impression_val = 0.0;
-        if (ad_id_impression_val_str != null && ad_id_impression_val_str!= "") {
+        if (ad_id_impression_val_str != null && !Objects.equals(ad_id_impression_val_str, "")) {
             ad_id_impression_val = Double.parseDouble(ad_id_impression_val_str);
         }
         features.add(ad_id_impression_val);
@@ -238,7 +244,7 @@ public class AdsSelector {
         @SuppressWarnings("unchecked")
         String query_campaign_id_click_val_str = (String)featureCacheClient.get(query_campaign_id_click_key);
         Double query_campaign_id_click_val = 0.0;
-        if (query_campaign_id_click_val_str != null && query_campaign_id_click_val_str!= "") {
+        if (query_campaign_id_click_val_str != null && !Objects.equals(query_campaign_id_click_val_str, "")) {
             query_campaign_id_click_val = Double.parseDouble(query_campaign_id_click_val_str);
         }
         features.add(query_campaign_id_click_val);
@@ -248,7 +254,7 @@ public class AdsSelector {
         @SuppressWarnings("unchecked")
         String query_campaign_id_impression_val_str = (String)featureCacheClient.get(query_campaign_id_impression_key);
         Double query_campaign_id_impression_val = 0.0;
-        if (query_campaign_id_impression_val_str != null && query_campaign_id_impression_val_str!= "") {
+        if (query_campaign_id_impression_val_str != null && !Objects.equals(query_campaign_id_impression_val_str, "")) {
             query_campaign_id_impression_val = Double.parseDouble(query_campaign_id_impression_val_str);
         }
         features.add(query_campaign_id_impression_val);
@@ -258,7 +264,7 @@ public class AdsSelector {
         @SuppressWarnings("unchecked")
         String query_ad_id_click_val_str = (String)featureCacheClient.get(query_ad_id_click_key);
         Double query_ad_id_click_val = 0.0;
-        if (query_ad_id_click_val_str != null && query_ad_id_click_val_str!= "") {
+        if (query_ad_id_click_val_str != null && !Objects.equals(query_ad_id_click_val_str, "")) {
             query_ad_id_click_val = Double.parseDouble(query_ad_id_click_val_str);
         }
         features.add(query_ad_id_click_val);
@@ -268,7 +274,7 @@ public class AdsSelector {
         @SuppressWarnings("unchecked")
         String query_ad_id_impression_val_str = (String)featureCacheClient.get(query_ad_id_impression_key);
         Double query_ad_id_impression_val = 0.0;
-        if (query_ad_id_impression_val_str != null && query_ad_id_impression_val_str!= "") {
+        if (query_ad_id_impression_val_str != null && !Objects.equals(query_ad_id_impression_val_str, "")) {
             query_ad_id_impression_val = Double.parseDouble(query_ad_id_impression_val_str);
         }
         features.add(query_ad_id_impression_val);

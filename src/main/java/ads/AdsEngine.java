@@ -33,11 +33,10 @@ public class AdsEngine {
     private Boolean enable_query_rewrite;
     private int indexServerTimeout; //ms
 
-    public AdsEngine(String adsDataFilePath, String budgetDataFilePath,String logistic_reg_model_file,
-                     String gbdt_model_path, String memcachedServer,int memcachedPortal,int featureMemcachedPortal,
+    public AdsEngine(String adsDataFilePath, String budgetDataFilePath, String logistic_reg_model_file,
+                     String gbdt_model_path, String memcachedServer, int memcachedPortal, int featureMemcachedPortal,
                      int synonymsMemcachedPortal, int tfMemcachedPortal, int dfMemcachedPortal,
-                     String mysqlHost,String mysqlDb,String user,String pass)
-    {
+                     String mysqlHost, String mysqlDb, String user, String pass) {
         mAdsDataFilePath = adsDataFilePath;
         mBudgetFilePath = budgetDataFilePath;
         m_logistic_reg_model_file = logistic_reg_model_file;
@@ -54,7 +53,7 @@ public class AdsEngine {
         mysql_pass = pass;
         enable_query_rewrite = false;
         indexServerTimeout = 1000;
-        indexBuilder = new IndexBuilder(memcachedServer,memcachedPortal,mysql_host,mysql_db,mysql_user,mysql_pass);
+        indexBuilder = new IndexBuilder(memcachedServer, memcachedPortal, mysql_host, mysql_db, mysql_user, mysql_pass);
     }
 
     public Boolean init() {
@@ -78,27 +77,26 @@ public class AdsEngine {
                 ad.pClick = adJson.isNull("pClick") ? 0.0 : adJson.getDouble("pClick");
                 ad.category =  adJson.isNull("category") ? "" : adJson.getString("category");
                 ad.description = adJson.isNull("description") ? "" : adJson.getString("description");
-                ad.keyWords = new ArrayList<String>();
-                JSONArray keyWords = adJson.isNull("keyWords") ? null :  adJson.getJSONArray("keyWords");
+                ad.keyWords = new ArrayList<>();
+                JSONArray keyWords = adJson.isNull("keyWords") ? null : adJson.getJSONArray("keyWords");
                 for(int j = 0; j < keyWords.length();j++) {
                     ad.keyWords.add(keyWords.getString(j));
                 }
 //				if(!indexBuilder.buildInvertIndex(ad)) {
 //
 //				}
-				/*
+
 				if(!indexBuilder.buildInvertIndex(ad) || !indexBuilder.buildForwardIndex(ad))
 				{
 					//log
 				}
-				*/
-            }
 
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
 
-        //load budget data
+        // load budget data
         try (BufferedReader brBudget = new BufferedReader(new FileReader(mBudgetFilePath))) {
             String line;
             while ((line = brBudget.readLine()) != null) {
@@ -145,7 +143,7 @@ public class AdsEngine {
     private AdsSelectionResult getAdsFromIndexServer(List<String> queryTerms) {
         AdsSelectionResult adsResult = new AdsSelectionResult();
         adindex.Query.Builder _query =  adindex.Query.newBuilder();
-        for(int i = 0; i< queryTerms.size();i++) {
+        for(int i = 0; i < queryTerms.size(); i++) {
             System.out.println("term = " + queryTerms.get(i));
             _query.addTerm(queryTerms.get(i));
         }
@@ -156,9 +154,11 @@ public class AdsEngine {
         // design choice
         // #1 sequentially call index server 1, 2, 3... 串行的往两个index server取数据
         // #2 parallel call index server 1, 2, 3... 并行的往两个index server取数据
-        // 选择是并行
-        AdsIndexClientWorker adsIndexClient1 = new AdsIndexClientWorker(queryList, "127.0.0.1",50051,adsResult);
-        AdsIndexClientWorker adsIndexClient2 = new AdsIndexClientWorker(queryList, "127.0.0.1",50052,adsResult);
+        // 选择是并行，生成两个client，client1跟50051的server取数据，client2跟50052的server取数据，
+        AdsIndexClientWorker adsIndexClient1 = new AdsIndexClientWorker(queryList, "127.0.0.1",
+                                                                        50051,adsResult);
+        AdsIndexClientWorker adsIndexClient2 = new AdsIndexClientWorker(queryList, "127.0.0.1",
+                                                                        50052,adsResult);
         adsIndexClient1.start();
         adsIndexClient2.start();
 
@@ -166,13 +166,11 @@ public class AdsEngine {
             // client最多等server 1s
             adsIndexClient1.join(indexServerTimeout);
         } catch (InterruptedException e1) {
-            // TODO Auto-generated catch block
             e1.printStackTrace();
         }
         try {
             adsIndexClient2.join(indexServerTimeout);
         } catch (InterruptedException e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
         return adsResult;
@@ -187,12 +185,16 @@ public class AdsEngine {
         List<Ad> adsCandidates = new ArrayList<>();
         if (enable_query_rewrite) {
             // list of rewritten term
-            List<List<String>> rewrittenQuery =  QueryParser.getInstance().QueryRewrite(query, mMemcachedServer, mSynonymsMemcachedPortal);
+            List<List<String>> rewrittenQuery =  QueryParser.getInstance().QueryRewrite(query, mMemcachedServer,
+                    mSynonymsMemcachedPortal);
+
             Set<Long> uniquueAds = new HashSet<>();
             //select ads candidates
             for (List<String> queryTerms : rewrittenQuery) {
-                List<Ad> adsCandidates_temp = AdsSelector.getInstance(mMemcachedServer, mMemcachedPortal,mFeatureMemcachedPortal,mTFMemcachedPortal,mDFMemcachedPortal,
-                        m_logistic_reg_model_file,m_gbdt_model_path, mysql_host, mysql_db,mysql_user, mysql_pass).selectAds(queryTerms,device_id, device_ip, query_category);
+                List<Ad> adsCandidates_temp = AdsSelector.getInstance(mMemcachedServer, mMemcachedPortal,
+                        mFeatureMemcachedPortal, mTFMemcachedPortal, mDFMemcachedPortal, m_logistic_reg_model_file,
+                        m_gbdt_model_path, mysql_host, mysql_db, mysql_user, mysql_pass)
+                        .selectAds(queryTerms,device_id, device_ip, query_category);
                 // 去掉重复的广告
                 for(Ad ad : adsCandidates_temp) {
                     if (!uniquueAds.contains(ad.adId)) {
@@ -236,7 +238,8 @@ public class AdsEngine {
 
         // Dedupe ads per campaign
         // 每个campaign最多返回一个ad，为了多样性，不能每次返回的广告都是属于一个campaign的
-        List<Ad> dedupedAds = AdsCampaignManager.getInstance(mysql_host, mysql_db,mysql_user, mysql_pass).DedupeByCampaignId(unfilteredAds);
+        List<Ad> dedupedAds = AdsCampaignManager.getInstance(mysql_host, mysql_db,mysql_user, mysql_pass)
+                                .DedupeByCampaignId(unfilteredAds);
         System.out.println("dedupedAds ads left = " + dedupedAds.size());
 
         //pricing： next rank score/current score * current bid price

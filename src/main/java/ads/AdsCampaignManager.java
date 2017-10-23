@@ -31,10 +31,8 @@ public class AdsCampaignManager {
     public  List<Ad> DedupeByCampaignId(List<Ad> adsCandidates) {
         List<Ad> dedupedAds = new ArrayList<>();
         HashSet<Long> campaignIdSet = new HashSet<>();
-        for(Ad ad : adsCandidates)
-        {
-            if(!campaignIdSet.contains(ad.campaignId))
-            {
+        for(Ad ad : adsCandidates) {
+            if(!campaignIdSet.contains(ad.campaignId)) {
                 dedupedAds.add(ad);
                 campaignIdSet.add(ad.campaignId);
             }
@@ -44,12 +42,10 @@ public class AdsCampaignManager {
 
     public List<Ad> ApplyBudget(List<Ad> adsCandidates) {
         List<Ad> ads = new ArrayList<>();
-        try
-        {
+        try {
             MySQLAccess mysql = new MySQLAccess(mysql_host, mysql_db, mysql_user, mysql_pass);
             // 最后一个广告不显示
-            for(int i = 0; i < adsCandidates.size() - 1; i++)
-            {
+            for(int i = 0; i < adsCandidates.size() - 1; i++) {
                 Ad ad = adsCandidates.get(i);
                 Long campaignId = ad.campaignId;
                 System.out.println("campaignId: " + campaignId);
@@ -63,18 +59,15 @@ public class AdsCampaignManager {
                 //ApplyBudget log: tractionId(sessionID), campaignId, ad.costPerClick
                 //1.set budget buffer and alert on 10% of budget left on campaignId 9999 -> offline process campaignId 9999
                 //2.reduce offline process frequency
-                if(ad.costPerClick <= budget && ad.costPerClick >= minPriceThreshold)
-                {
+                if(ad.costPerClick <= budget && ad.costPerClick >= minPriceThreshold) {
                     ads.add(ad);
                     budget = budget - ad.costPerClick;
                     mysql.updateCampaignData(campaignId, budget);
                 }
             }
         } catch (Exception e) {
-            // TODO Auto-generated catch block
             e.printStackTrace();
         }
-
         return ads;
     }
 
