@@ -4,7 +4,10 @@ import json
 from pyspark import SparkContext
 from pyspark.mllib.feature import Word2Vec
 
+# /Users/zhangzhichao/IdeaProjects/SearchAdvertising/python_code/query_rewrite/word2vec_training_cleaned.txt
 training_file = sys.argv[1]
+
+# output synonyms data: /Users/zhangzhichao/IdeaProjects/SearchAdvertising/python_code/query_rewrite/synonyms.txt
 synonyms_data_file = sys.argv[2]
 
 sc = SparkContext(appName="word2vec")
@@ -14,9 +17,8 @@ word2vec = Word2Vec()
 #millis = int(round(time.time() * 1000))
 #model = word2vec.setMinCount(5).setVectorSize(10).setSeed(2017).fit(inp)
 #model = word2vec.setVectorSize(10).setSeed(2017).fit(inp)
-model = word2vec.setLearningRate(0.01).setWindowSize(4).setMinCount(5).setVectorSize(20).setSeed(2017).fit(training_data)
-
 #model = word2vec.setMinCount(5).setVectorSize(10).setSeed(2017).fit(inp)
+model = word2vec.setLearningRate(0.01).setWindowSize(4).setMinCount(5).setVectorSize(20).setSeed(2017).fit(training_data)
 
 vec = model.getVectors()
 synonyms_data = open(synonyms_data_file, "w")

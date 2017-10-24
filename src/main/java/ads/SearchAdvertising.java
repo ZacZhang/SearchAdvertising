@@ -1,5 +1,7 @@
 package ads;
 
+import ads.models.Ad;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -66,9 +68,33 @@ public class SearchAdvertising extends HttpServlet {
         System.out.println("UI template initilized");
     }
 
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        String query = request.getParameter("q");
+        String device_id = request.getParameter("did");
+        String device_ip = request.getParameter("dip");
+        String query_category = request.getParameter("qclass");
+
+        List<Ad> adsCandidates = adsEngine.selectAds(query,device_id,device_ip,query_category);
+        String result = uiTemplate;
+        StringBuilder list = new StringBuilder();
+        for(Ad ad : adsCandidates) {
+            System.out.println("final selected ad id = " + ad.adId);
+            System.out.println("final selected ad rank score = " + ad.rankScore);
+            String adContent = adTemplate;
+            adContent = adContent.replace("$title$", ad.title);
+            adContent = adContent.replace("$brand$", ad.brand);
+            adContent = adContent.replace("$img$", ad.thumbnail);
+            adContent = adContent.replace("$link$", ad.detail_url);
+            adContent = adContent.replace("$price$", Double.toString(ad.price));
+            list.append(adContent);
+        }
+        result = result.replace("$list$", list.toString());
+        response.setContentType("text/html; charset=UTF-8");
+        response.getWriter().write(result);
+    }
 
 
-//    @Override
+    //    @Override
 //    public void init(ServletConfig config) throws ServletException {
 //        super.init(config);
 //        System.out.println("whut");
@@ -83,33 +109,4 @@ public class SearchAdvertising extends HttpServlet {
 //        String result = "query : " + query + "from ip: " + ip;
 //        response.getWriter().append(result).append(request.getContextPath());
 //    }
-
-        protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String query = request.getParameter("q");
-        String device_id = request.getParameter("did");
-        String device_ip = request.getParameter("dip");
-        String query_category = request.getParameter("qclass");
-
-        List<Ad> adsCandidates = adsEngine.selectAds(query,device_id,device_ip,query_category);
-        String result = uiTemplate;
-        StringBuilder list = new StringBuilder();
-        for(Ad ad : adsCandidates)
-        {
-            System.out.println("final selected ad id = " + ad.adId);
-            System.out.println("final selected ad rank score = " + ad.rankScore);
-            String adContent = adTemplate;
-            adContent = adContent.replace("$title$", ad.title);
-            adContent = adContent.replace("$brand$", ad.brand);
-            adContent = adContent.replace("$img$", ad.thumbnail);
-            adContent = adContent.replace("$link$", ad.detail_url);
-            adContent = adContent.replace("$price$", Double.toString(ad.price));
-            //System.out.println("adContent: " + adContent);
-            list.append(adContent);
-        }
-        result = result.replace("$list$", list.toString());
-        //System.out.println("list: " + list);
-        //System.out.println("RESULT: " + result);
-        response.setContentType("text/html; charset=UTF-8");
-        response.getWriter().write(result);
-    }
 }

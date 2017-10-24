@@ -1,4 +1,4 @@
-package ads;
+package ads.models;
 
 import java.io.Serializable;
 import java.util.List;

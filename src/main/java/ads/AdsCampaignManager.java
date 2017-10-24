@@ -1,6 +1,7 @@
 package ads;
 
-import java.io.IOException;
+import ads.models.Ad;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -28,6 +29,7 @@ public class AdsCampaignManager {
         return instance;
     }
 
+    // 每个campaign最多返回一个ad，为了多样性，不能每次返回的广告都是属于一个campaign的
     public  List<Ad> DedupeByCampaignId(List<Ad> adsCandidates) {
         List<Ad> dedupedAds = new ArrayList<>();
         HashSet<Long> campaignIdSet = new HashSet<>();
@@ -44,7 +46,7 @@ public class AdsCampaignManager {
         List<Ad> ads = new ArrayList<>();
         try {
             MySQLAccess mysql = new MySQLAccess(mysql_host, mysql_db, mysql_user, mysql_pass);
-            // 最后一个广告不显示
+            // 注意最后一个广告不会显示
             for(int i = 0; i < adsCandidates.size() - 1; i++) {
                 Ad ad = adsCandidates.get(i);
                 Long campaignId = ad.campaignId;
@@ -59,6 +61,8 @@ public class AdsCampaignManager {
                 //ApplyBudget log: tractionId(sessionID), campaignId, ad.costPerClick
                 //1.set budget buffer and alert on 10% of budget left on campaignId 9999 -> offline process campaignId 9999
                 //2.reduce offline process frequency
+
+                // 扣钱
                 if(ad.costPerClick <= budget && ad.costPerClick >= minPriceThreshold) {
                     ads.add(ad);
                     budget = budget - ad.costPerClick;

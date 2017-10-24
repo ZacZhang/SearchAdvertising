@@ -1,5 +1,8 @@
 package ads;
 
+import ads.models.Ad;
+import ads.models.Campaign;
+
 import java.sql.*;
 import java.util.Arrays;
 
@@ -244,6 +247,5 @@ public class MySQLAccess {
                 connect.close();
             }
         }
-
     }
 }

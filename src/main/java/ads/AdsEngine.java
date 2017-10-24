@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.HashSet;
 import java.util.Set;
 
+import ads.models.Ad;
+import ads.models.Campaign;
 import org.json.*;
 
 import adindex.AdsIndexClientWorker;
@@ -17,8 +19,8 @@ import adindex.AdsSelectionResult;
 public class AdsEngine {
     private String mAdsDataFilePath;
     private String mBudgetFilePath;
-    String m_logistic_reg_model_file;
-    String m_gbdt_model_path;
+    private String m_logistic_reg_model_file;
+    private String m_gbdt_model_path;
     private IndexBuilder indexBuilder;
     private String mMemcachedServer;
     private int mMemcachedPortal;
@@ -51,7 +53,10 @@ public class AdsEngine {
         mysql_db = mysqlDb;
         mysql_user = user;
         mysql_pass = pass;
-        enable_query_rewrite = false;
+
+        //enable_query_rewrite = false;
+        enable_query_rewrite = true;
+
         indexServerTimeout = 1000;
         indexBuilder = new IndexBuilder(memcachedServer, memcachedPortal, mysql_host, mysql_db, mysql_user, mysql_pass);
     }
@@ -143,9 +148,9 @@ public class AdsEngine {
     private AdsSelectionResult getAdsFromIndexServer(List<String> queryTerms) {
         AdsSelectionResult adsResult = new AdsSelectionResult();
         adindex.Query.Builder _query =  adindex.Query.newBuilder();
-        for(int i = 0; i < queryTerms.size(); i++) {
-            System.out.println("term = " + queryTerms.get(i));
-            _query.addTerm(queryTerms.get(i));
+        for (String queryTerm : queryTerms) {
+            System.out.println("term = " + queryTerm);
+            _query.addTerm(queryTerm);
         }
         System.out.println("term count= " + _query.getTermCount());
         java.util.List<adindex.Query> queryList = new ArrayList<>();
@@ -168,6 +173,7 @@ public class AdsEngine {
         } catch (InterruptedException e1) {
             e1.printStackTrace();
         }
+
         try {
             adsIndexClient2.join(indexServerTimeout);
         } catch (InterruptedException e) {
@@ -175,6 +181,7 @@ public class AdsEngine {
         }
         return adsResult;
     }
+
 
     public List<Ad> selectAds(String query, String device_id, String device_ip, String query_category)
     {
@@ -188,16 +195,16 @@ public class AdsEngine {
             List<List<String>> rewrittenQuery =  QueryParser.getInstance().QueryRewrite(query, mMemcachedServer,
                     mSynonymsMemcachedPortal);
 
-            Set<Long> uniquueAds = new HashSet<>();
-            //select ads candidates
+            //select ads candidates 海选
             for (List<String> queryTerms : rewrittenQuery) {
                 List<Ad> adsCandidates_temp = AdsSelector.getInstance(mMemcachedServer, mMemcachedPortal,
                         mFeatureMemcachedPortal, mTFMemcachedPortal, mDFMemcachedPortal, m_logistic_reg_model_file,
                         m_gbdt_model_path, mysql_host, mysql_db, mysql_user, mysql_pass)
                         .selectAds(queryTerms,device_id, device_ip, query_category);
                 // 去掉重复的广告
+                Set<Long> uniqueAds = new HashSet<>();
                 for(Ad ad : adsCandidates_temp) {
-                    if (!uniquueAds.contains(ad.adId)) {
+                    if (!uniqueAds.contains(ad.adId)) {
                         adsCandidates.add(ad);
                     }
                 }
@@ -223,11 +230,11 @@ public class AdsEngine {
             //m_logistic_reg_model_file,m_gbdt_model_path, mysql_host, mysql_db,mysql_user, mysql_pass).selectAds(queryTerms,device_id, device_ip, query_category);
         }
 
-        //L0 filter by pClick, relevance score
-        //List<Ad> L0unfilteredAds = AdsFilter.getInstance().LevelZeroFilterAds(adsCandidates);
-        //System.out.println("L0unfilteredAds ads left = " + L0unfilteredAds.size());
+        // TODO : L0 filter by pClick, relevance score 根据pClick和relevance过滤广告 (这步可以移到index server)
+        List<Ad> L0unfilteredAds = AdsFilter.getInstance().LevelZeroFilterAds(adsCandidates);
+        System.out.println("L0unfilteredAds ads left = " + L0unfilteredAds.size());
 
-        //rank
+        // rank 根据quality score对候选广告进行排序
         List<Ad> rankedAds = AdsRanker.getInstance().rankAds(adsCandidates);
         System.out.println("rankedAds ads left = " + rankedAds.size());
 
@@ -236,20 +243,19 @@ public class AdsEngine {
         List<Ad> unfilteredAds = AdsFilter.getInstance().LevelOneFilterAds(rankedAds,k);
         System.out.println("unfilteredAds ads left = " + unfilteredAds.size());
 
-        // Dedupe ads per campaign
-        // 每个campaign最多返回一个ad，为了多样性，不能每次返回的广告都是属于一个campaign的
+        // Dedupe ads per campaign (每个campaign最多返回一个ad，为了多样性，不能每次返回的广告都是属于一个campaign的)
         List<Ad> dedupedAds = AdsCampaignManager.getInstance(mysql_host, mysql_db,mysql_user, mysql_pass)
                                 .DedupeByCampaignId(unfilteredAds);
         System.out.println("dedupedAds ads left = " + dedupedAds.size());
 
-        //pricing： next rank score/current score * current bid price
+        // pricing： next rank score/current score * current bid price 定价
         AdPricing.getInstance().setCostPerClick(dedupedAds);
 
-        //filter last one , ad without budget , ads with CPC < minReservePrice
+        // filter last one, ad without budget, ads with CPC < minReservePrice (开始算钱，budget该扣的扣，budget用光了的ads就踢掉)
         List<Ad> ads = AdsCampaignManager.getInstance(mysql_host, mysql_db,mysql_user, mysql_pass).ApplyBudget(dedupedAds);
         System.out.println("AdsCampaignManager ads left = " + ads.size());
 
-        //allocation
+        // allocation (给广告分配位置)
         AdsAllocation.getInstance().AllocateAds(ads);
         return ads;
     }

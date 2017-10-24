@@ -18,8 +18,11 @@ def cleanData(input) :
     return list_of_tokens
 
 if __name__ == "__main__":
-    input_file = sys.argv[1] #ads data
-    word2vec_training_file = sys.argv[2]
+    #ads data: /Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/ads.txt
+    input_file = sys.argv[1] 
+
+    #output training data: /Users/zhangzhichao/IdeaProjects/SearchAdvertising/python_code/query_rewrite/word2vec_training_cleaned.txt 
+    word2vec_training_file = sys.argv[2] 
 
     word2vec_training = open(word2vec_training_file, "w")
 

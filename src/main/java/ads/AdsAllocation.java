@@ -1,5 +1,7 @@
 package ads;
 
+import ads.models.Ad;
+
 import java.util.List;
 
 public class AdsAllocation {

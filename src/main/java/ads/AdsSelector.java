@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.*;
 
+import ads.models.Ad;
 import net.spy.memcached.AddrUtil;
 import net.spy.memcached.ConnectionFactoryBuilder;
 import net.spy.memcached.FailureMode;
@@ -44,7 +45,8 @@ public class AdsSelector {
         mysql_pass = pass;
         m_logistic_reg_model_file = logistic_reg_model_file;
         m_gbdt_model_path = gbdt_model_path;
-        enable_pClick = false;
+        //enable_pClick = false;
+        enable_pClick = true;
         enableTFIDF = true;
         String tf_address = mMemcachedServer + ":" + mTFMemcachedPortal;
         String df_address = mMemcachedServer + ":" + mDFMemcachedPortal;
@@ -103,18 +105,22 @@ public class AdsSelector {
         return relevanceScore;
     }
 
+    // 去inverted index中选广告，所以要用到memcached
     public List<Ad> selectAds(List<String> queryTerms, String device_id, String device_ip, String query_category)
     {
         List<Ad> adList = new ArrayList<>();
+        // key: ad id value: matched term count
         HashMap<Long, Integer> matchedAds = new HashMap<>();
         try {
             MemcachedClient cache = new MemcachedClient(new InetSocketAddress(mMemcachedServer, mMemcachedPortal));
 
-            // keywords term跟query term中是否有一样的，有则把那个ad作为candidate
+            // 针对query中的每个term，都要去访问inverted index
+            // keywords term跟query term中是否有一样的，有则把那个ad作为一个candidate
             for(String queryTerm : queryTerms) {
                 System.out.println("selectAds queryTerm = " + queryTerm);
                 @SuppressWarnings("unchecked")
-                Set<Long>  adIdList = (Set<Long>)cache.get(queryTerm);
+                Set<Long> adIdList = (Set<Long>)cache.get(queryTerm);
+                // 对于每一个query term, 去cache里找到ad list, ad list不为空则说明matched
                 if(adIdList != null && adIdList.size() > 0) {
                     for(Object adId : adIdList) {
                         Long key = (Long)adId;

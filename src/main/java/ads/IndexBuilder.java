@@ -1,5 +1,7 @@
 package ads;
 
+import ads.models.Ad;
+import ads.models.Campaign;
 import net.spy.memcached.AddrUtil;
 import net.spy.memcached.ConnectionFactoryBuilder;
 import net.spy.memcached.FailureMode;

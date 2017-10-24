@@ -1,5 +1,7 @@
 package ads;
 
+import ads.models.Ad;
+
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
