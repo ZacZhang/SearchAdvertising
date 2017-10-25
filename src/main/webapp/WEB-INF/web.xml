@@ -18,6 +18,11 @@
     <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/budget.txt</param-value>
   </context-param>
 
+  <!--<context-param>-->
+    <!--<param-name>synonymsDataFilePath</param-name>-->
+    <!--<param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/python_code/query_rewrite/synonyms.txt</param-value>-->
+  <!--</context-param>-->
+
   <context-param>
     <param-name>ctrLogisticRegressionDataFilePath</param-name>
     <param-value>/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/model/ctrLogisticRegression.txt</param-value>

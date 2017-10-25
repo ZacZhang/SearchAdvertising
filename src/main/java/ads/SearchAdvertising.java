@@ -51,9 +51,9 @@ public class SearchAdvertising extends HttpServlet {
                 dfMemcachedPortal, mysqlHost, mysqlDb, mysqlUser, mysqlPass);
 
         // when the ads data is loaded, you can comment this code
-        //this.adsEngine.init();
+        // this.adsEngine.init();
 
-        System.out.println("adsEngine initilized");
+        System.out.println("adsEngine initialized");
         //load UI template
         try {
             byte[] uiData;
@@ -65,7 +65,7 @@ public class SearchAdvertising extends HttpServlet {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("UI template initilized");
+        System.out.println("UI template initialized");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -8,38 +8,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc1e6872-c6eb-4ce9-902a-b6167aedfa39" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ads_ranking/TF-IDF/document_frequency.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ads_ranking/TF-IDF/store_tf_idf.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ads_ranking/TF-IDF/term_frequency.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ads_ranking/pClick/ctr_gbdt.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ads_ranking/pClick/ctr_logistic.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ads_ranking/pClick/prepare_ctr_training_data.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ads_ranking/pClick/select_feature.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/ads_ranking/pClick/store_ctr_feature.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/query_rewrite/generate_word2vec_training_data.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/query_rewrite/word2vec.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ads/Ad.java" afterPath="$PROJECT_DIR$/src/main/java/ads/models/Ad.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ads/Campaign.java" afterPath="$PROJECT_DIR$/src/main/java/ads/models/Campaign.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/adindex/AdsIndexClient.class" afterPath="$PROJECT_DIR$/target/classes/adindex/AdsIndexClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsEngine.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsEngine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsSelector.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsSelector.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/QueryParser.class" afterPath="$PROJECT_DIR$/target/classes/ads/QueryParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/SearchAdvertising.class" afterPath="$PROJECT_DIR$/target/classes/ads/SearchAdvertising.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdPricing.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdPricing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsAllocation.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsAllocation.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsCampaignManager.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsCampaignManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsEngine.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsFilter.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsFilter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsRanker.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsRanker.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsSelector.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsSelector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsServer.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/IndexBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/ads/IndexBuilder.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" afterPath="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/QueryParser.java" afterPath="$PROJECT_DIR$/src/main/java/ads/QueryParser.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java" afterPath="$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/item.html" afterPath="$PROJECT_DIR$/src/main/webapp/item.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ui.html" afterPath="$PROJECT_DIR$/src/main/webapp/ui.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,11 +36,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="86" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="86" />
+            <state relative-caret-position="256">
+              <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="IndexBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ads/IndexBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-191">
+              <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AdsServer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QueryParser.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ads/QueryParser.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="455">
+              <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -76,8 +79,8 @@
       <file leaf-file-name="AdsEngine.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsEngine.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="478">
-              <caret line="254" column="106" lean-forward="false" selection-start-line="254" selection-start-column="106" selection-end-line="254" selection-end-column="106" />
+            <state relative-caret-position="222">
+              <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -89,6 +92,18 @@
             <state relative-caret-position="180">
               <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchAdvertising.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="226">
+              <caret line="53" column="11" lean-forward="false" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -141,8 +156,15 @@
       <find>load</find>
       <find>initi</find>
       <find>adsList</find>
-      <find>11219</find>
       <find>stop</find>
+      <find>syn</find>
+      <find>synonyms</find>
+      <find>synonymsMemcachedPortal</find>
+      <find>synonym</find>
+      <find>11219</find>
+      <find>nik</find>
+      <find>mSynonymsMemcachedPortal</find>
+      <find>QueryRe</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -183,21 +205,21 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ads/SearchAdvertising1.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsServer.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/IndexBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/adindex/AdsIndexClient.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/item.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/ui.html" />
-        <option value="$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsSelector.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ads/QueryParser.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ads/AdsEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsCampaignManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/models/Ad.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/models/Campaign.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ads/QueryParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ads/AdsEngine.java" />
       </list>
     </option>
   </component>
@@ -290,11 +312,6 @@
             <path>
               <item name="SearchAdvertising" type="b2602c69:ProjectViewProjectNode" />
               <item name="SearchAdvertising" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SearchAdvertising" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SearchAdvertising" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -309,14 +326,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SearchAdvertising" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SearchAdvertising" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="adindex" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SearchAdvertising" type="b2602c69:ProjectViewProjectNode" />
@@ -522,16 +531,15 @@
       <workItem from="1508618759860" duration="72000" />
       <workItem from="1508634867846" duration="35196000" />
       <workItem from="1508732597762" duration="646000" />
-      <workItem from="1508809868473" duration="13781000" />
+      <workItem from="1508809868473" duration="18755000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="106690000" />
+    <option name="totallyTimeSpent" value="111664000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -543,11 +551,11 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33700138" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28335625" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28335625" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.71526825" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.28473178" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.7120921" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.28790787" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -800,17 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/IndexBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="31" column="26" lean-forward="true" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1981#2011#1" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/adindex/AdsIndexClient.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -837,55 +834,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/QueryParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-67">
-          <caret line="16" column="0" lean-forward="true" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1237#1267#1" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50">
-          <caret line="74" column="49" lean-forward="false" selection-start-line="74" selection-start-column="49" selection-end-line="74" selection-end-column="49" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2303">
-          <caret line="163" column="32" lean-forward="true" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsRanker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="559">
-          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsAllocation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -973,18 +925,68 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsEngine.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsAllocation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="254" column="106" lean-forward="false" selection-start-line="254" selection-start-column="106" selection-end-line="254" selection-end-column="106" />
+        <state relative-caret-position="180">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="226">
+          <caret line="53" column="11" lean-forward="false" selection-start-line="53" selection-start-column="11" selection-end-line="53" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="86" lean-forward="false" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="86" />
+        <state relative-caret-position="256">
+          <caret line="79" column="0" lean-forward="false" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsEngine.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1409">
+          <caret line="163" column="32" lean-forward="true" selection-start-line="163" selection-start-column="32" selection-end-line="163" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/IndexBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-191">
+          <caret line="31" column="26" lean-forward="false" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/QueryParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="53" column="18" lean-forward="false" selection-start-line="53" selection-start-column="18" selection-end-line="53" selection-end-column="18" />
           <folding />
         </state>
       </provider>

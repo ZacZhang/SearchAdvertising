@@ -27,7 +27,11 @@ public class QueryParser {
         return tokens;
     }
 
-    // 对应进来的query，根据里面的term找对应的近义词，把所有近义词和query本身的term一起返回
+    // 对应进来的query，根据里面的term找对应的近义词，把所有rewritten query和query本身一起返回
+    // raw query: nike running shoe
+    // running == jogging
+    // nike running shoe => nike jogging shoe
+    // ...
     public List<List<String>> QueryRewrite(String query, String memcachedServer,int memcachedPortal) {
         List<List<String>> res = new ArrayList<>();
         // 把query拆成一个个term - 分词

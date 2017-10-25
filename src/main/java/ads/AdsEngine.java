@@ -84,7 +84,7 @@ public class AdsEngine {
                 ad.description = adJson.isNull("description") ? "" : adJson.getString("description");
                 ad.keyWords = new ArrayList<>();
                 JSONArray keyWords = adJson.isNull("keyWords") ? null : adJson.getJSONArray("keyWords");
-                for(int j = 0; j < keyWords.length();j++) {
+                for(int j = 0; j < (keyWords != null ? keyWords.length() : 0); j++) {
                     ad.keyWords.add(keyWords.getString(j));
                 }
 //				if(!indexBuilder.buildInvertIndex(ad)) {
@@ -185,10 +185,6 @@ public class AdsEngine {
 
     public List<Ad> selectAds(String query, String device_id, String device_ip, String query_category)
     {
-        //query understanding
-        //raw query: nike running shoe
-        //running == jogging
-        //nike running shoe => nike jogging shoe
         List<Ad> adsCandidates = new ArrayList<>();
         if (enable_query_rewrite) {
             // list of rewritten term
