@@ -7,7 +7,7 @@ from pyspark.mllib.feature import Word2Vec
 # /Users/zhangzhichao/IdeaProjects/SearchAdvertising/python_code/query_rewrite/word2vec_training_cleaned.txt
 training_file = sys.argv[1]
 
-# output synonyms data: /Users/zhangzhichao/IdeaProjects/SearchAdvertising/python_code/query_rewrite/synonyms.txt
+# output synonyms data: /Users/zhangzhichao/IdeaProjects/SearchAdvertising/python_code/query_rewrite/synonyms_2.txt
 synonyms_data_file = sys.argv[2]
 
 sc = SparkContext(appName="word2vec")
@@ -25,7 +25,7 @@ synonyms_data = open(synonyms_data_file, "w")
 
 print "len of vec", len(vec)
 for word in vec.keys():
-    synonyms = model.findSynonyms(word, 10)
+    synonyms = model.findSynonyms(word, 2)
     entry = {}
     entry["word"] = word
     synon_list = []
@@ -40,10 +40,10 @@ synonyms_data.close()
 #debug - print vec
 test_data = [ "furniture", "shaver", "toddler", "sport","xbox", "led","organizer"]
 for w in test_data:
-    synonyms = model.findSynonyms(w, 10)
+    synonyms = model.findSynonyms(w, 2)
     print "synonyms of ",w
     for word, cosine_distance in synonyms:
         print("{}: {}".format(word, cosine_distance))
 
-model.save(sc, "word2vec_model")
+model.save(sc, "word2vec_model_2")
 sc.stop()

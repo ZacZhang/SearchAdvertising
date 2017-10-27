@@ -26,9 +26,9 @@ public class QueryParser {
 
         // allSynonymList.get(index) -> query中第index+1个term对应的所有近义词
         List<String> synonyms = allSynonymList.get(index);
-        for (String synonym : synonyms) {
+        for (int i = 0; i < synonyms.size(); i++) {
             ArrayList<String> queryTerms = (ArrayList<String>) queryTermsTemp.clone();
-            queryTerms.add(synonym);
+            queryTerms.add(synonyms.get(i));
             QueryRewriteHelper(index + 1, len, queryTerms, allSynonymList, res);
         }
     }

@@ -148,13 +148,13 @@ public class AdsSelector {
                 adList.add(ad);
             }
 
-            System.out.println("selected " + adList.size() + "ads in L0");
+            System.out.println("selected " + adList.size() + " ads in L0");
 
             if (enable_pClick) {
                 // featureMemcachedPortal - 11218
                 MemcachedClient featureCacheClient = new MemcachedClient(new InetSocketAddress(mMemcachedServer,
                         mFeatureMemcachedPortal));
-                System.out.println("mFeatureMemcachedPortal = " + mFeatureMemcachedPortal);
+                // System.out.println("mFeatureMemcachedPortal = " + mFeatureMemcachedPortal);
                 // calculate pClick
                 for(Ad ad : adList) {
                     predictCTR(ad, queryTerms, device_id, device_ip, query_category, featureCacheClient);

@@ -8,43 +8,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc1e6872-c6eb-4ce9-902a-b6167aedfa39" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_7.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_0.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdPricing.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdPricing.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsAllocation.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsAllocation.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsCampaignManager.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsCampaignManager.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsEngine.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsEngine.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsFilter.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsFilter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsRanker$1.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsRanker$1.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsRanker.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsRanker.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/data/.part-00000-db84f04f-22c5-4c14-acb6-c2ddd0dc90b1-c000.snappy.parquet.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/data/_SUCCESS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/data/part-00000-db84f04f-22c5-4c14-acb6-c2ddd0dc90b1-c000.snappy.parquet" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/metadata/.part-00000.crc" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/metadata/_SUCCESS" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/metadata/part-00000" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsSelector.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsSelector.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsServer.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsServer.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/CTRModel.class" afterPath="$PROJECT_DIR$/target/classes/ads/CTRModel.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/IndexBuilder.class" afterPath="$PROJECT_DIR$/target/classes/ads/IndexBuilder.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/MySQLAccess.class" afterPath="$PROJECT_DIR$/target/classes/ads/MySQLAccess.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/QueryParser.class" afterPath="$PROJECT_DIR$/target/classes/ads/QueryParser.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/SearchAdvertising.class" afterPath="$PROJECT_DIR$/target/classes/ads/SearchAdvertising.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SearchAdvertising_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SearchAdvertising_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SearchAdvertising.iml" afterPath="$PROJECT_DIR$/SearchAdvertising.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_code/ads_ranking/TF-IDF/document_frequency.py" afterPath="$PROJECT_DIR$/python_code/ads_ranking/TF-IDF/document_frequency.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_code/ads_ranking/TF-IDF/store_tf_idf.py" afterPath="$PROJECT_DIR$/python_code/ads_ranking/TF-IDF/store_tf_idf.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_code/ads_ranking/TF-IDF/term_frequency.py" afterPath="$PROJECT_DIR$/python_code/ads_ranking/TF-IDF/term_frequency.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_code/ads_ranking/pClick/ctr_gbdt.py" afterPath="$PROJECT_DIR$/python_code/ads_ranking/pClick/ctr_gbdt.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_code/ads_ranking/pClick/ctr_logistic.py" afterPath="$PROJECT_DIR$/python_code/ads_ranking/pClick/ctr_logistic.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_code/ads_ranking/pClick/prepare_ctr_training_data.py" afterPath="$PROJECT_DIR$/python_code/ads_ranking/pClick/prepare_ctr_training_data.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_code/ads_ranking/pClick/select_feature.py" afterPath="$PROJECT_DIR$/python_code/ads_ranking/pClick/select_feature.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_code/ads_ranking/pClick/store_ctr_feature.py" afterPath="$PROJECT_DIR$/python_code/ads_ranking/pClick/store_ctr_feature.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdPricing.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdPricing.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsEngine.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsEngine.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsRanker.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsRanker.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec.py" afterPath="$PROJECT_DIR$/python_code/query_rewrite/word2vec.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsSelector.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsSelector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/CTRModel.java" afterPath="$PROJECT_DIR$/src/main/java/ads/CTRModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" afterPath="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/QueryParser.java" afterPath="$PROJECT_DIR$/src/main/java/ads/QueryParser.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java" afterPath="$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -78,11 +56,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdsSelector.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AdsSelector.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsSelector.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="603">
-              <caret line="152" column="32" lean-forward="true" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
+            <state relative-caret-position="2175">
+              <caret line="153" column="49" lean-forward="false" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -112,20 +90,20 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/adindex/AdsSelectionResult.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
-              <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="QueryParser.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="QueryParser.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/ads/QueryParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="102" column="56" lean-forward="false" selection-start-line="102" selection-start-column="56" selection-end-line="102" selection-end-column="56" />
+            <state relative-caret-position="238">
+              <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1509071941784" expanded="false" signature="2208:2238" ph="/unchecked/" />
+                <marker date="1509077963926" expanded="false" signature="2226:2256" ph="/unchecked/" />
               </folding>
             </state>
           </provider>
@@ -135,7 +113,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsRanker.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="337">
-              <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+              <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -144,19 +122,27 @@
       <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+            <state relative-caret-position="276">
+              <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdsFilter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsFilter.java">
+      <file leaf-file-name="MySQLAccess.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-              <folding />
+            <state relative-caret-position="297">
+              <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+              <folding>
+                <marker date="1509078583461" expanded="true" signature="2139:2188" ph="select adId ad" />
+                <marker date="1509078583461" expanded="true" signature="2656:2717" ph="insert into missingValue.ad... " />
+                <marker date="1509078583461" expanded="true" signature="3934:3980" ph="select * fro... ad" />
+                <marker date="1509078583461" expanded="true" signature="5615:5682" ph="select campa... campaign" />
+                <marker date="1509078583461" expanded="true" signature="6162:6211" ph="insert into missingValue.campaign... " />
+                <marker date="1509078583461" expanded="true" signature="6997:7060" ph="select budge... campaign" />
+                <marker date="1509078583461" expanded="true" signature="8044:8123" ph="update missi... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,9 +171,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>nik</find>
-      <find>mSynonymsMemcachedPortal</find>
-      <find>QueryRe</find>
       <find>CTRMo</find>
       <find>TF</find>
       <find>under</find>
@@ -202,7 +185,6 @@
       <find>strip</find>
       <find>rew</find>
       <find>my</find>
-      <find>myl</find>
       <find>myli</find>
       <find>ranker rankScore</find>
       <find>query_</find>
@@ -215,6 +197,10 @@
       <find>come</find>
       <find>enable</find>
       <find>enable_q</find>
+      <find>myl</find>
+      <find>jdbc</find>
+      <find>mFeatureMemcachedPortal</find>
+      <find>selected</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -258,7 +244,6 @@
         <option value="$PROJECT_DIR$/src/main/webapp/ui.html" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsCampaignManager.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/models/Ad.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/models/Campaign.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdPricing.java" />
@@ -267,9 +252,10 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsRanker.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/CTRModel.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ads/AdsSelector.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/QueryParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ads/AdsSelector.java" />
       </list>
     </option>
   </component>
@@ -384,15 +370,6 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ads" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SearchAdvertising" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SearchAdvertising" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="ads" type="462c0819:PsiDirectoryNode" />
-              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SearchAdvertising" type="b2602c69:ProjectViewProjectNode" />
@@ -581,12 +558,12 @@
       <workItem from="1508618759860" duration="72000" />
       <workItem from="1508634867846" duration="35196000" />
       <workItem from="1508732597762" duration="646000" />
-      <workItem from="1508809868473" duration="47682000" />
+      <workItem from="1508809868473" duration="49955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="140591000" />
+    <option name="totallyTimeSpent" value="142864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -598,14 +575,14 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.38651994" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27510315" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28335625" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.7107623" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.28923768" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.7134725" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.2865275" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -879,23 +856,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="537">
-          <caret line="246" column="32" lean-forward="true" selection-start-line="246" selection-start-column="32" selection-end-line="246" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1508857328969" expanded="true" signature="2124:2173" ph="select adId ad" />
-            <marker date="1508857328969" expanded="true" signature="2641:2702" ph="insert into missingValue.ad... " />
-            <marker date="1508857328969" expanded="true" signature="3919:3965" ph="select * fro... ad" />
-            <marker date="1508857328969" expanded="true" signature="5600:5667" ph="select campa... campaign" />
-            <marker date="1508857328969" expanded="true" signature="6147:6196" ph="insert into missingValue.campaign... " />
-            <marker date="1508857328969" expanded="true" signature="6982:7045" ph="select budge... campaign" />
-            <marker date="1508857328969" expanded="true" signature="8029:8108" ph="update missi... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/query_rewrite/generate_word2vec_training_data.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -968,18 +928,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="89" column="36" lean-forward="false" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsRanker.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="337">
-          <caret line="41" column="5" lean-forward="true" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -988,14 +940,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="297">
           <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsSelector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="603">
-          <caret line="152" column="32" lean-forward="true" selection-start-line="152" selection-start-column="32" selection-end-line="152" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1021,7 +965,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/adindex/AdsSelectionResult.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+          <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1036,12 +980,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ads/QueryParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="102" column="56" lean-forward="false" selection-start-line="102" selection-start-column="56" selection-end-line="102" selection-end-column="56" />
+        <state relative-caret-position="238">
+          <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1509071941784" expanded="false" signature="2208:2238" ph="/unchecked/" />
+            <marker date="1509077963926" expanded="false" signature="2226:2256" ph="/unchecked/" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
+          <folding>
+            <marker date="1509078583461" expanded="true" signature="2139:2188" ph="select adId ad" />
+            <marker date="1509078583461" expanded="true" signature="2656:2717" ph="insert into missingValue.ad... " />
+            <marker date="1509078583461" expanded="true" signature="3934:3980" ph="select * fro... ad" />
+            <marker date="1509078583461" expanded="true" signature="5615:5682" ph="select campa... campaign" />
+            <marker date="1509078583461" expanded="true" signature="6162:6211" ph="insert into missingValue.campaign... " />
+            <marker date="1509078583461" expanded="true" signature="6997:7060" ph="select budge... campaign" />
+            <marker date="1509078583461" expanded="true" signature="8044:8123" ph="update missi... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsSelector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2175">
+          <caret line="153" column="49" lean-forward="false" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
+          <folding />
         </state>
       </provider>
     </entry>

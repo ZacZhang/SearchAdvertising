@@ -35,7 +35,7 @@ public class MySQLAccess {
         try {
             // This will load the MySQL driver, each DB has its own driver
             Class.forName("com.mysql.jdbc.Driver");
-            String conn = "jdbc:mysql://"+d_server_name+"/"+d_db_name+"?user="+d_user_name+"&password="+d_password;
+            String conn = "jdbc:mysql://"+d_server_name+"/"+d_db_name+"?user="+d_user_name+"&password="+d_password+"&useSSL=true";
             //System.out.println("Connecting to database: " + conn);
             d_connect = DriverManager.getConnection(conn);
             return d_connect;
