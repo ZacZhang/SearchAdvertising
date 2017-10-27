@@ -4,7 +4,6 @@
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/ads/AdsCampaignManager.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/adindex/AdsReply.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/adindex/Ad.java
-/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/ads/Campaign.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/adindex/SearchAdvertising.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/ads/AdsServer.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/adindex/AdsIndexGrpc.java
@@ -12,9 +11,10 @@
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/adindex/AdsIndexClient.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/ads/SearchAdvertising.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/ads/AdsEngine.java
-/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/ads/Ad.java
+/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/ads/models/Campaign.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/adindex/AdOrBuilder.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/ads/AdsSelector.java
+/Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/ads/models/Ad.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/adindex/AdsIndexClientWorker.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/adindex/AdsRequestOrBuilder.java
 /Users/zhangzhichao/IdeaProjects/SearchAdvertising/src/main/java/adindex/QueryOrBuilder.java

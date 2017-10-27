@@ -32,7 +32,6 @@ def prepare_feature_val(fields,memcache_client):
     if not device_ip_click_val:
         device_ip_click_val = "0"
 
-
     device_ip_impression_key = "dipi_" + device_ip
     device_ip_impression_val = memcache_client.get(device_ip_impression_key)
     print device_ip_impression_val
@@ -79,7 +78,7 @@ def prepare_feature_val(fields,memcache_client):
     if not query_ad_id_impression_val:
         query_ad_id_impression_val = "0"
 
-    # get training data, 11 features
+    # get training data, 11 features. the order cannot be changed.
     features = []
     features.append(str(device_ip_click_val))
     features.append(str(device_ip_impression_val))
@@ -99,18 +98,20 @@ def prepare_feature_val(fields,memcache_client):
     features.append(query_ad_category_match)
 
     line = ",".join(features)
-    #print line
     return line
 
 if __name__ == "__main__":
-    file = sys.argv[1] # click log file
-    # client = memcache.Client([('127.0.0.1', 11218)])
+    #click log file: /Users/zhangzhichao/Documents/click_log.txt
+    file = sys.argv[1]
     client = libmc.Client(
-        ["127.0.0.1:11218"],comp_threshold=0, noreply=False, prefix=None,hash_fn=MC_HASH_MD5, failover=False)
+        ["127.0.0.1:11218"],comp_threshold=0,noreply=False,prefix=None,hash_fn=MC_HASH_MD5,failover=False)
+
     sc = SparkContext(appName="CTR_Features")
-    output_dir = "/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/log/"
+    output_dir = "/Users/zhangzhichao/Documents/SearchAdvertising_log file"
     data = sc.textFile(file).map(lambda line: line.encode("utf8", "ignore").split(','))
+    # fields[7] -> label
     feature_data = data.map(lambda fields: (prepare_feature_val(fields, client),int(fields[7])))
 
     feature_data.saveAsTextFile(output_dir + "ctr_features")
+
     sc.stop()

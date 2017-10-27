@@ -13,12 +13,9 @@ def store_feature(feature_dir,key_prefix,memcache_client):
         with open(filename, 'r') as f:
             for line in f:
                 line = line.strip().strip("()")
-                #print "input line:",line
                 fields = line.split(",")
                 key = key_prefix + "_" + fields[0].strip("''")
-                #print key
                 val = fields[1]
-                #print val
                 memcache_client.set(key,val)
                 print "key=",key
                 print "val=",val
@@ -26,10 +23,9 @@ def store_feature(feature_dir,key_prefix,memcache_client):
 
 if __name__ == "__main__":
     input_dir = "/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/log/"
-    #client = memcache.Client([('127.0.0.1', 11218)])
     client = libmc.Client(
-    ["127.0.0.1:11218"],comp_threshold=0, noreply=False, prefix=None,hash_fn=MC_HASH_MD5, failover=False
-    )
+    ["127.0.0.1:11218"],comp_threshold=0, noreply=False, prefix=None,hash_fn=MC_HASH_MD5, failover=False)
+
     client.config(MC_POLL_TIMEOUT, 100)  # 100 ms
     client.config(MC_CONNECT_TIMEOUT, 300)  # 300 ms
     client.config(MC_RETRY_TIMEOUT, 5)  # 5 s

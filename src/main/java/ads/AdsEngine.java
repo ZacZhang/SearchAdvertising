@@ -183,8 +183,7 @@ public class AdsEngine {
     }
 
 
-    public List<Ad> selectAds(String query, String device_id, String device_ip, String query_category)
-    {
+    public List<Ad> selectAds(String query, String device_id, String device_ip, String query_category) {
         List<Ad> adsCandidates = new ArrayList<>();
         if (enable_query_rewrite) {
             // list of rewritten term

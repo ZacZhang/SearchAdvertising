@@ -76,14 +76,9 @@ public class AdsSelector {
     // TF*IDF = log(numDocs / (docFreq + 1)) * sqrt(tf) * (1/sqrt(docLength))
     private double calculateTFIDF(Long adId, String term, int docLength) {
         String tfKey = adId.toString() + "_" + term;
-        // System.out.println("tfKey = " + tfKey);
-        // System.out.println("dfKey = " + term);
 
         String tf = (String)tfCacheClient.get(tfKey);
-        // System.out.println("tf = " + tf);
-
         String df =  (String)dfCacheClient.get(term);
-        // System.out.println("df=" + df);
 
         if(tf != null && df != null) {
             int tfVal = Integer.parseInt(tf);
@@ -91,14 +86,14 @@ public class AdsSelector {
             double dfScore = Math.log10(numDocs * 1.0 / (dfVal + 1));
             double tfScore = Math.sqrt(tfVal);
             double norm = Math.sqrt(docLength);
-            return (dfScore*tfScore) / norm;
+            return (dfScore * tfScore) / norm;
         }
         return 0.0;
     }
 
     private double getRelevanceScoreByTFIDF(Long adId, int numOfKeyWords, List<String> queryTerms) {
         double relevanceScore = 0.0;
-        // 把query中每个term跟对应adId的TF-IDF值加起来
+        // 把query中每个term跟对应adId的TF-IDF值加起来 (因为TF-IDF指的是一个term和某个adId的关联度，一个query有多个term，故加起来)
         for(String term : queryTerms) {
             relevanceScore += calculateTFIDF(adId, term, numOfKeyWords);
         }
@@ -134,28 +129,33 @@ public class AdsSelector {
                 }
             }
 
-            // 去mysql取detail信息
+            // 去mysql取detail信息, 就算只有一个term match也把ad拿过来
             for(Long adId : matchedAds.keySet()) {
-                System.out.println("selectAds adId = " + adId);
+                //System.out.println("selectAds adId = " + adId);
                 MySQLAccess mysql = new MySQLAccess(mysql_host, mysql_db, mysql_user, mysql_pass);
                 Ad ad = mysql.getAdData(adId);
                 double relevanceScore = matchedAds.get(adId) * 1.0 / ad.keyWords.size();
                 double relevanceScoreTFIDF = getRelevanceScoreByTFIDF(adId, ad.keyWords.size(), queryTerms);
+
                 if(enableTFIDF) {
                     ad.relevanceScore = relevanceScoreTFIDF;
                 } else {
                     ad.relevanceScore = relevanceScore;
                 }
-                System.out.println("selectAds relevanceScore = " + ad.relevanceScore);
+
+                // System.out.println("selectAds relevanceScore = " + ad.relevanceScore);
                 ad.pClick = 0.0;
                 adList.add(ad);
             }
 
+            System.out.println("selected " + adList.size() + "ads in L0");
+
             if (enable_pClick) {
-                //calculate pClick
+                // featureMemcachedPortal - 11218
                 MemcachedClient featureCacheClient = new MemcachedClient(new InetSocketAddress(mMemcachedServer,
                         mFeatureMemcachedPortal));
                 System.out.println("mFeatureMemcachedPortal = " + mFeatureMemcachedPortal);
+                // calculate pClick
                 for(Ad ad : adList) {
                     predictCTR(ad, queryTerms, device_id, device_ip, query_category, featureCacheClient);
                 }
@@ -170,10 +170,10 @@ public class AdsSelector {
     // 预测当前用户是否会点这个广告，每个feature都从memcached读出来，然后把feature送到CTRModel里面进行预测
     private void predictCTR(Ad ad, List<String> queryTerms, String device_id, String device_ip, String query_category,
                             MemcachedClient featureCacheClient) {
-        //construct features, note that the order of features must be as follows
+        // construct features, note that the order of features must be as follows
         ArrayList<Double> features = new ArrayList<>();
 
-        //device_ip_click
+        // device_ip_click
         String device_ip_click_key = "dipc_" + device_ip;
         @SuppressWarnings("unchecked")
         String device_ip_click_val_str = (String)featureCacheClient.get(device_ip_click_key);
@@ -183,10 +183,10 @@ public class AdsSelector {
         }
         features.add(device_ip_click_val);
 
-        System.out.println("device_ip_click_key = " + device_ip_click_key);
-        System.out.println("device_ip_click_val = " + device_ip_click_val);
+        // System.out.println("device_ip_click_key = " + device_ip_click_key);
+        // System.out.println("device_ip_click_val = " + device_ip_click_val);
 
-        //device_ip_impression
+        // device_ip_impression
         String device_ip_impression_key = "dipi_" + device_ip;
         @SuppressWarnings("unchecked")
         String device_ip_impression_val_str = (String)featureCacheClient.get(device_ip_impression_key);
@@ -195,11 +195,10 @@ public class AdsSelector {
             device_ip_impression_val = Double.parseDouble(device_ip_impression_val_str);
         }
         features.add(device_ip_impression_val);
-        //System.out.println("device_ip_impression_key = " + device_ip_impression_key);
-        System.out.println("device_ip_impression_val = " + device_ip_impression_val);
+        // System.out.println("device_ip_impression_val = " + device_ip_impression_val);
 
 
-        //device_id_click
+        // device_id_click
         String device_id_click_key = "didc_" + device_id;
         @SuppressWarnings("unchecked")
         String device_id_click_val_str = (String)featureCacheClient.get(device_id_click_key);
@@ -208,11 +207,11 @@ public class AdsSelector {
             device_id_click_val = Double.parseDouble(device_id_click_val_str);
         }
         features.add(device_id_click_val);
-        System.out.println("device_id_click_key = " + device_id_click_key);
-        System.out.println("device_id_click_val = " + device_id_click_val);
-        System.out.println("device_id_click_val_str = " + device_id_click_val_str);
+        // System.out.println("device_id_click_key = " + device_id_click_key);
+        // System.out.println("device_id_click_val = " + device_id_click_val);
+        // System.out.println("device_id_click_val_str = " + device_id_click_val_str);
 
-        //device_id_impression
+        // device_id_impression
         String device_id_impression_key = "didi_" + device_id;
         @SuppressWarnings("unchecked")
         String device_id_impression_val_str = (String)featureCacheClient.get(device_id_impression_key);
@@ -221,10 +220,10 @@ public class AdsSelector {
             device_id_impression_val = Double.parseDouble(device_id_impression_val_str);
         }
         features.add(device_id_impression_val);
-        System.out.println("device_id_impression_key = " + device_id_impression_key);
-        System.out.println("device_id_impression_val = " + device_id_impression_val);
+        // System.out.println("device_id_impression_key = " + device_id_impression_key);
+        // System.out.println("device_id_impression_val = " + device_id_impression_val);
 
-        //ad_id_click
+        // ad_id_click
         String ad_id_click_key = "aidc_" + ad.adId.toString();
         @SuppressWarnings("unchecked")
         String ad_id_click_val_str = (String)featureCacheClient.get(ad_id_click_key);
@@ -234,7 +233,7 @@ public class AdsSelector {
         }
         features.add(ad_id_click_val);
 
-        //ad_id_impression
+        // ad_id_impression
         String ad_id_impression_key = "aidi_" + ad.adId.toString();
         @SuppressWarnings("unchecked")
         String ad_id_impression_val_str = (String)featureCacheClient.get(ad_id_impression_key);
@@ -245,7 +244,7 @@ public class AdsSelector {
         features.add(ad_id_impression_val);
 
         String query = Utility.strJoin(queryTerms, "_");
-        //query_campaign_id_click
+        // query_campaign_id_click
         String query_campaign_id_click_key = "qcidc_" + query + "_" + ad.campaignId.toString();
         @SuppressWarnings("unchecked")
         String query_campaign_id_click_val_str = (String)featureCacheClient.get(query_campaign_id_click_key);
@@ -255,7 +254,7 @@ public class AdsSelector {
         }
         features.add(query_campaign_id_click_val);
 
-        //query_campaign_id_impression
+        // query_campaign_id_impression
         String query_campaign_id_impression_key = "qcidi_" + query + "_" + ad.campaignId.toString();
         @SuppressWarnings("unchecked")
         String query_campaign_id_impression_val_str = (String)featureCacheClient.get(query_campaign_id_impression_key);
@@ -265,7 +264,7 @@ public class AdsSelector {
         }
         features.add(query_campaign_id_impression_val);
 
-        //query_ad_id_click
+        // query_ad_id_click
         String query_ad_id_click_key = "qaidc_" + query + "_" + ad.adId.toString();
         @SuppressWarnings("unchecked")
         String query_ad_id_click_val_str = (String)featureCacheClient.get(query_ad_id_click_key);
@@ -275,7 +274,7 @@ public class AdsSelector {
         }
         features.add(query_ad_id_click_val);
 
-        //query_ad_id_impression
+        // query_ad_id_impression
         String query_ad_id_impression_key = "qaidi_" + query + "_" + ad.adId.toString();
         @SuppressWarnings("unchecked")
         String query_ad_id_impression_val_str = (String)featureCacheClient.get(query_ad_id_impression_key);
@@ -285,14 +284,16 @@ public class AdsSelector {
         }
         features.add(query_ad_id_impression_val);
 
-        //query_ad_category_match scale to 1000000 if match
+        // query_ad_category_match scale to 1000000 if match
         double query_ad_category_match = 0.0;
         if(Objects.equals(query_category, ad.category)) {
             query_ad_category_match = 1000000.0;
         }
         features.add(query_ad_category_match);
 
-        ad.pClick = CTRModel.getInstance(m_logistic_reg_model_file, m_gbdt_model_path).predictCTRWithLogisticRegression(features);
-        System.out.println("ad.pClick = " + ad.pClick);
+        ad.pClick = CTRModel
+                .getInstance(m_logistic_reg_model_file, m_gbdt_model_path)
+                .predictCTRWithLogisticRegression(features);
+        // System.out.println("ad.pClick = " + ad.pClick);
     }
 }

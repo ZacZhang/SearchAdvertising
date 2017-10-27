@@ -6,11 +6,14 @@ def process_query(query):
     output = "_".join(fields)
     return output
 
-# click log:
-# Device IP, Device id,Session id,Query,AdId,CampaignId,Ad_category_Query_category(0/1),clicked(0/1)
+# extract features from click log:
+# click log features: Device IP, Device id,Session id,Query,AdId,CampaignId,Ad_category_Query_category(0/1),clicked(0/1)
+# extracted features: device_id_click, device_id_impression, device_ip_click, device_ip_impression, 
+# ad_id_click, ad_id_impression, query_campaign_id_click, query_campaign_id_impression, query_ad_id_click, query_ad_id_impression
 
 if __name__ == "__main__":
-    file = sys.argv[1] #raw search log
+    #click log file: /Users/zhangzhichao/Documents/click_log.txt
+    file = sys.argv[1]
     sc = SparkContext(appName="CTR_Features")
     output_dir = "/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/log/"
     data = sc.textFile(file).map(lambda line: line.encode("utf8", "ignore").split(','))

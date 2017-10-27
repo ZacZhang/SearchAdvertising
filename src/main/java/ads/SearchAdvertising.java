@@ -69,6 +69,7 @@ public class SearchAdvertising extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        // 发request请求时,把query, device id, device ip, query category都作为参数输入
         String query = request.getParameter("q");
         String device_id = request.getParameter("did");
         String device_ip = request.getParameter("dip");

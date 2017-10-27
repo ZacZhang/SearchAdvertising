@@ -21,10 +21,12 @@ public class CTRModel {
             while ((line = ctrLogisticReader.readLine()) != null) {
                 JSONObject parameterJson = new JSONObject(line);
                 JSONArray weights = parameterJson.isNull("weights") ? null :  parameterJson.getJSONArray("weights");
-                for(int j = 0; j < weights.length(); j++) {
-                    weights_logistic.add(weights.getDouble(j));
-                    System.out.println("weights = " + weights.getDouble(j));
+                if (weights != null) {
+                    for(int j = 0; j < weights.length(); j++) {
+                        weights_logistic.add(weights.getDouble(j));
+                        // System.out.println("weights = " + weights.getDouble(j));
 
+                    }
                 }
                 bias_logistic= parameterJson.getDouble("bias");
                 System.out.println("bias_logistic = " + bias_logistic);
@@ -41,6 +43,7 @@ public class CTRModel {
         return instance;
     }
 
+    // 当ads选出来之后，调用这个function去预测pClick
     public double predictCTRWithLogisticRegression(ArrayList<Double> features) {
         double pClick = bias_logistic;
         if(features.size() != weights_logistic.size()) {
@@ -50,9 +53,8 @@ public class CTRModel {
         for (int i = 0; i < features.size(); i++) {
             pClick = pClick + weights_logistic.get(i) * features.get(i);
         }
-        System.out.println("sigmoid input pClick = " + pClick);
+        // System.out.println("sigmoid input pClick = " + pClick);
         pClick = Utility.sigmoid(pClick);
         return pClick;
     }
-
 }

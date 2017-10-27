@@ -21,7 +21,7 @@ if __name__ == "__main__":
         #print ("label=" + str(label))
         return LabeledPoint(label,features)
 
-    data = sc.textFile("/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/log/ctr_features/part*")
+    data = sc.textFile("/Users/zhangzhichao/Documents/SearchAdvertising_log file/ctr_features/part*")
     (trainingData, testData) = data.randomSplit([0.7, 0.3])
     parsedTrainData = trainingData.map(parsePoint)
     parsedTestData = testData.map(parsePoint)

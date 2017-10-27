@@ -23,7 +23,8 @@ def generate_json(items):
 	return json.dumps(result)
 
 if __name__ == "__main__":
-	adfile = sys.argv[1] # ads.txt
+	# ads.txt: /Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/ads.txt
+	adfile = sys.argv[1]
 	sc = SparkContext(appName="DF_Features")
 	data = sc.textFile(adfile).flatMap(lambda line: get_adid_terms(line)).distinct().map(lambda w: (get_term(w),1)).reduceByKey(lambda v1,v2: v1+v2).map(generate_json)
 	data.saveAsTextFile("/Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/log/DF")

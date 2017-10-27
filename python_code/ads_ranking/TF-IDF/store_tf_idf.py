@@ -8,6 +8,7 @@ from libmc import (MC_HASH_MD5, MC_POLL_TIMEOUT, MC_CONNECT_TIMEOUT, MC_RETRY_TI
 def store_tf(feature_dir):
     client = libmc.Client(
     ["127.0.0.1:11220"],comp_threshold=0, noreply=False, prefix=None,hash_fn=MC_HASH_MD5, failover=False)
+    
     client.config(MC_POLL_TIMEOUT, 100)  # 100ms
     client.config(MC_CONNECT_TIMEOUT, 300)  # 300ms
     client.config(MC_RETRY_TIMEOUT, 5)  # 5s

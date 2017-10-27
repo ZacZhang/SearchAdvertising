@@ -4,10 +4,10 @@ from pyspark import SparkContext
 
 def get_adid_terms(line):
 	entry = json.loads(line.strip())
-	ad_id = enty['adId']
+	ad_id = entry['adId']
 	adid_terms = []
 
-	for term in enty['keyWords']:
+	for term in entry['keyWords']:
 		val = str(ad_id) + "_" + term
 		adid_terms.append(val)
 
@@ -21,7 +21,8 @@ def generate_json(items):
 
 
 if __name__ == "__main__":
-	adfile = sys.argv[1] # ads.txt
+	# ads.txt: /Users/zhangzhichao/IdeaProjects/SearchAdvertising/data/ads.txt
+	adfile = sys.argv[1]
 	sc = SparkContext(appName="TF_Features")
 
 	data = sc.textFile(adfile).flatMap(lambda line: get_adid_terms(line)).map(lambda w: (w,1)).reduceByKey(lambda v1,v2: v1+v2).map(generate_json)

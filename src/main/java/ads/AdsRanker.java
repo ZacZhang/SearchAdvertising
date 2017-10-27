@@ -35,9 +35,9 @@ public class AdsRanker {
             }
         });
 
-        for(Ad ad : adsCandidates) {
-            System.out.println("ranker rankScore = " + ad.rankScore);
-        }
+//        for(Ad ad : adsCandidates) {
+//            System.out.println("ranker rankScore = " + ad.rankScore);
+//        }
         return adsCandidates;
     }
 }
