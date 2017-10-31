@@ -5,6 +5,8 @@ import java.net.InetSocketAddress;
 import java.util.*;
 
 import ads.models.Ad;
+import ads.utils.MySQLAccess;
+import ads.utils.Utility;
 import net.spy.memcached.AddrUtil;
 import net.spy.memcached.ConnectionFactoryBuilder;
 import net.spy.memcached.FailureMode;

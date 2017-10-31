@@ -1,4 +1,4 @@
-package ads;
+package ads.utils;
 
 import ads.models.Ad;
 import ads.models.Campaign;

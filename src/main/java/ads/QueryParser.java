@@ -1,5 +1,6 @@
 package ads;
 
+import ads.utils.Utility;
 import net.spy.memcached.MemcachedClient;
 
 import java.io.IOException;

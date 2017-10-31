@@ -8,21 +8,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cc1e6872-c6eb-4ce9-902a-b6167aedfa39" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/data/.part-00000-db84f04f-22c5-4c14-acb6-c2ddd0dc90b1-c000.snappy.parquet.crc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/data/_SUCCESS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/data/part-00000-db84f04f-22c5-4c14-acb6-c2ddd0dc90b1-c000.snappy.parquet" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/metadata/.part-00000.crc" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/metadata/_SUCCESS" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_model/metadata/part-00000" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/AdsSelector.class" afterPath="$PROJECT_DIR$/target/classes/ads/AdsSelector.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/MySQLAccess.class" afterPath="$PROJECT_DIR$/target/classes/ads/MySQLAccess.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/ads/QueryParser.class" afterPath="$PROJECT_DIR$/target/classes/ads/QueryParser.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_code_gson_gson_2_8_0.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/data/ads_test.txt" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/ads_ranking/TF-IDF/document_frequency.py" afterPath="$PROJECT_DIR$/offline_training/ads_ranking/TF-IDF/document_frequency.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/ads_ranking/TF-IDF/store_tf_idf.py" afterPath="$PROJECT_DIR$/offline_training/ads_ranking/TF-IDF/store_tf_idf.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/ads_ranking/TF-IDF/term_frequency.py" afterPath="$PROJECT_DIR$/offline_training/ads_ranking/TF-IDF/term_frequency.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/ads_ranking/pClick/ctr_gbdt.py" afterPath="$PROJECT_DIR$/offline_training/ads_ranking/pClick/ctr_gbdt.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/ads_ranking/pClick/ctr_logistic.py" afterPath="$PROJECT_DIR$/offline_training/ads_ranking/pClick/ctr_logistic.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/ads_ranking/pClick/prepare_ctr_training_data.py" afterPath="$PROJECT_DIR$/offline_training/ads_ranking/pClick/prepare_ctr_training_data.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/ads_ranking/pClick/select_feature.py" afterPath="$PROJECT_DIR$/offline_training/ads_ranking/pClick/select_feature.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/ads_ranking/pClick/store_ctr_feature.py" afterPath="$PROJECT_DIR$/offline_training/ads_ranking/pClick/store_ctr_feature.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/generate click log/ad_weight_file.json" afterPath="$PROJECT_DIR$/offline_training/generate click log/ad_weight_file.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/generate click log/campaignId_adId_file.json" afterPath="$PROJECT_DIR$/offline_training/generate click log/campaignId_adId_file.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/generate click log/campaignId_category_file.json" afterPath="$PROJECT_DIR$/offline_training/generate click log/campaignId_category_file.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/generate click log/campaign_weight_file.json" afterPath="$PROJECT_DIR$/offline_training/generate click log/campaign_weight_file.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/generate click log/cleaned_ads.txt" afterPath="$PROJECT_DIR$/offline_training/generate click log/cleaned_ads.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/generate click log/generage_click_log.py" afterPath="$PROJECT_DIR$/offline_training/generate click log/generage_click_log.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/generate click log/query_camp_ad_file.json" afterPath="$PROJECT_DIR$/offline_training/generate click log/query_camp_ad_file.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/generate click log/user.txt" afterPath="$PROJECT_DIR$/offline_training/generate click log/user.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/generate click log/user_small.txt" afterPath="$PROJECT_DIR$/offline_training/generate click log/user_small.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/generate_word2vec_training_data.py" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/generate_word2vec_training_data.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/save_sysnonyms.py" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/save_sysnonyms.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_10/synonyms_10.txt" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_10/synonyms_10.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_10/word2vec_model/data/.part-00000-db84f04f-22c5-4c14-acb6-c2ddd0dc90b1-c000.snappy.parquet.crc" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_10/word2vec_model/data/.part-00000-db84f04f-22c5-4c14-acb6-c2ddd0dc90b1-c000.snappy.parquet.crc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_10/word2vec_model/data/_SUCCESS" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_10/word2vec_model/data/_SUCCESS" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_10/word2vec_model/data/part-00000-db84f04f-22c5-4c14-acb6-c2ddd0dc90b1-c000.snappy.parquet" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_10/word2vec_model/data/part-00000-db84f04f-22c5-4c14-acb6-c2ddd0dc90b1-c000.snappy.parquet" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_10/word2vec_model/metadata/.part-00000.crc" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_10/word2vec_model/metadata/.part-00000.crc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_10/word2vec_model/metadata/_SUCCESS" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_10/word2vec_model/metadata/_SUCCESS" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_10/word2vec_model/metadata/part-00000" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_10/word2vec_model/metadata/part-00000" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_2/synonyms_2.txt" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_2/synonyms_2.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_2/word2vec_model_2/data/.part-00000-73429867-fbf6-42b6-827d-722e24d4a131-c000.snappy.parquet.crc" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_2/word2vec_model_2/data/.part-00000-73429867-fbf6-42b6-827d-722e24d4a131-c000.snappy.parquet.crc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_2/word2vec_model_2/data/_SUCCESS" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_2/word2vec_model_2/data/_SUCCESS" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_2/word2vec_model_2/data/part-00000-73429867-fbf6-42b6-827d-722e24d4a131-c000.snappy.parquet" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_2/word2vec_model_2/data/part-00000-73429867-fbf6-42b6-827d-722e24d4a131-c000.snappy.parquet" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_2/word2vec_model_2/metadata/.part-00000.crc" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_2/word2vec_model_2/metadata/.part-00000.crc" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_2/word2vec_model_2/metadata/_SUCCESS" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_2/word2vec_model_2/metadata/_SUCCESS" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/synonyms_2/word2vec_model_2/metadata/part-00000" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/synonyms_2/word2vec_model_2/metadata/part-00000" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec.py" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/word2vec.py" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec_training_cleaned.txt" afterPath="$PROJECT_DIR$/offline_training/query_rewrite/word2vec_training_cleaned.txt" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" afterPath="$PROJECT_DIR$/src/main/java/ads/utils/MySQLAccess.java" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/src/main/java/ads/Utility.java" afterPath="$PROJECT_DIR$/src/main/java/ads/utils/Utility.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SearchAdvertising_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SearchAdvertising_war_exploded.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/python_code/query_rewrite/word2vec.py" afterPath="$PROJECT_DIR$/python_code/query_rewrite/word2vec.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SearchAdvertising.iml" afterPath="$PROJECT_DIR$/SearchAdvertising.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsCampaignManager.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsCampaignManager.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/AdsSelector.java" afterPath="$PROJECT_DIR$/src/main/java/ads/AdsSelector.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" afterPath="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/CTRModel.java" afterPath="$PROJECT_DIR$/src/main/java/ads/CTRModel.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/IndexBuilder.java" afterPath="$PROJECT_DIR$/src/main/java/ads/IndexBuilder.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/ads/QueryParser.java" afterPath="$PROJECT_DIR$/src/main/java/ads/QueryParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/ui.html" afterPath="$PROJECT_DIR$/src/main/webapp/ui.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -45,121 +79,7 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="137">
-              <caret line="59" column="38" lean-forward="false" selection-start-line="59" selection-start-column="16" selection-end-line="59" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdsSelector.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsSelector.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2175">
-              <caret line="153" column="49" lean-forward="false" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdsEngine.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsEngine.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="189" column="79" lean-forward="false" selection-start-line="189" selection-start-column="79" selection-end-line="189" selection-end-column="79" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdsIndexClientWorker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/adindex/AdsIndexClientWorker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdsSelectionResult.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/adindex/AdsSelectionResult.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="24" column="0" lean-forward="false" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="QueryParser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ads/QueryParser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <marker date="1509077963926" expanded="false" signature="2226:2256" ph="/unchecked/" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="AdsRanker.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsRanker.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="337">
-              <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MySQLAccess.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
-              <folding>
-                <marker date="1509078583461" expanded="true" signature="2139:2188" ph="select adId ad" />
-                <marker date="1509078583461" expanded="true" signature="2656:2717" ph="insert into missingValue.ad... " />
-                <marker date="1509078583461" expanded="true" signature="3934:3980" ph="select * fro... ad" />
-                <marker date="1509078583461" expanded="true" signature="5615:5682" ph="select campa... campaign" />
-                <marker date="1509078583461" expanded="true" signature="6162:6211" ph="insert into missingValue.campaign... " />
-                <marker date="1509078583461" expanded="true" signature="6997:7060" ph="select budge... campaign" />
-                <marker date="1509078583461" expanded="true" signature="8044:8123" ph="update missi... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchAdvertising.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -171,7 +91,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CTRMo</find>
       <find>TF</find>
       <find>under</find>
       <find>bias</find>
@@ -201,6 +120,7 @@
       <find>jdbc</find>
       <find>mFeatureMemcachedPortal</find>
       <find>selected</find>
+      <find>bitti</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -241,7 +161,6 @@
         <option value="$PROJECT_DIR$/src/main/java/ads/IndexBuilder.java" />
         <option value="$PROJECT_DIR$/src/main/java/adindex/AdsIndexClient.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/item.html" />
-        <option value="$PROJECT_DIR$/src/main/webapp/ui.html" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsCampaignManager.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/models/Ad.java" />
@@ -249,13 +168,16 @@
         <option value="$PROJECT_DIR$/src/main/java/ads/AdPricing.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsRanker.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/CTRModel.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsEngine.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/QueryParser.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java" />
         <option value="$PROJECT_DIR$/src/main/java/ads/AdsSelector.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/ui.html" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/ads/utils/MySQLAccess.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ads/utils/Utility.java" />
       </list>
     </option>
   </component>
@@ -294,7 +216,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" fullScreen="true">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1280" />
     <option name="height" value="730" />
@@ -334,10 +256,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -371,17 +289,14 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ads" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="SearchAdvertising" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SearchAdvertising" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="webapp" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -558,15 +473,17 @@
       <workItem from="1508618759860" duration="72000" />
       <workItem from="1508634867846" duration="35196000" />
       <workItem from="1508732597762" duration="646000" />
-      <workItem from="1508809868473" duration="49955000" />
+      <workItem from="1508809868473" duration="50250000" />
+      <workItem from="1509260701827" duration="380000" />
+      <workItem from="1509480453117" duration="381000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="142864000" />
+    <option name="totallyTimeSpent" value="143920000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1280" height="800" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="730" extended-state="0" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -576,15 +493,14 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27510315" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27510315" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28335625" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.7134725" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23101777" sideWeight="0.2865275" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32148626" sideWeight="0.76535434" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32148626" sideWeight="0.23464566" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -599,6 +515,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287483" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -628,14 +545,11 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1365">
           <caret line="91" column="28" lean-forward="true" selection-start-line="91" selection-start-column="28" selection-end-line="91" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#1981#2011#1" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/utils/MySQLAccess.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2730">
           <caret line="182" column="9" lean-forward="true" selection-start-line="182" selection-start-column="9" selection-end-line="182" selection-end-column="9" />
@@ -646,7 +560,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="40" lean-forward="false" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -704,7 +617,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="24" column="20" lean-forward="false" selection-start-line="24" selection-start-column="20" selection-end-line="24" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -712,7 +624,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -720,7 +631,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1510">
           <caret line="84" column="3" lean-forward="true" selection-start-line="84" selection-start-column="3" selection-end-line="84" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -728,7 +638,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-5120">
           <caret line="38" column="44" lean-forward="true" selection-start-line="38" selection-start-column="44" selection-end-line="38" selection-end-column="44" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -736,7 +645,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="13" column="16" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -756,7 +664,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
           <caret line="14" column="5" lean-forward="true" selection-start-line="14" selection-start-column="5" selection-end-line="14" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -764,7 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4510">
           <caret line="181" column="3" lean-forward="false" selection-start-line="181" selection-start-column="3" selection-end-line="181" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,7 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="12" column="34" lean-forward="true" selection-start-line="12" selection-start-column="34" selection-end-line="12" selection-end-column="34" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -781,9 +686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-729">
           <caret line="9" column="3" lean-forward="true" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#5087#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -792,7 +694,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
           <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,9 +701,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="11" column="19" lean-forward="false" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -810,15 +708,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/ui.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -832,19 +721,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/Utility.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="45" column="51" lean-forward="false" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ads/models/Ad.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -852,23 +732,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/query_rewrite/generate_word2vec_training_data.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/query_rewrite/generate_word2vec_training_data.py" />
     <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsServer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="313">
           <caret line="38" column="22" lean-forward="false" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -884,15 +755,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="31" column="0" lean-forward="true" selection-start-line="31" selection-start-column="0" selection-end-line="31" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/python_code/ads_ranking/pClick/ctr_logistic.py">
+    <entry file="file://$PROJECT_DIR$/offline_training/ads_ranking/pClick/ctr_logistic.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="367">
           <caret line="46" column="0" lean-forward="true" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -900,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="31" column="1" lean-forward="false" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -908,7 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="26" column="49" lean-forward="false" selection-start-line="26" selection-start-column="49" selection-end-line="26" selection-end-column="49" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -916,7 +783,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
           <caret line="214" column="11" lean-forward="false" selection-start-line="214" selection-start-column="11" selection-end-line="214" selection-end-column="11" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -928,37 +794,53 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" column="35" lean-forward="false" selection-start-line="19" selection-start-column="35" selection-end-line="19" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/utils/Utility.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="36" column="5" lean-forward="true" selection-start-line="36" selection-start-column="5" selection-end-line="36" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/utils/MySQLAccess.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3161">
+          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <marker date="1509480732016" expanded="true" signature="2145:2194" ph="select adId ad" />
+            <marker date="1509480732016" expanded="true" signature="2662:2723" ph="insert into missingValue.ad... " />
+            <marker date="1509480732016" expanded="true" signature="3940:3986" ph="select * fro... ad" />
+            <marker date="1509480732016" expanded="true" signature="5621:5688" ph="select campa... campaign" />
+            <marker date="1509480732016" expanded="true" signature="6168:6217" ph="insert into missingValue.campaign... " />
+            <marker date="1509480732016" expanded="true" signature="7003:7066" ph="select budge... campaign" />
+            <marker date="1509480732016" expanded="true" signature="8050:8129" ph="update missi... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsRanker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="337">
+        <state relative-caret-position="480">
           <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/CTRModel.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/QueryParser.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+        <state relative-caret-position="300">
+          <caret line="27" column="63" lean-forward="true" selection-start-line="27" selection-start-column="63" selection-end-line="27" selection-end-column="63" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1509480732006" expanded="false" signature="2252:2282" ph="/unchecked/" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/adindex/AdsIndexClientWorker.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -970,53 +852,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/adindex/AdsIndexClientWorker.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="26" column="0" lean-forward="false" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsEngine.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
+        <state relative-caret-position="544">
           <caret line="189" column="79" lean-forward="false" selection-start-line="189" selection-start-column="79" selection-end-line="189" selection-end-column="79" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/QueryParser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/ui.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="32" column="9" lean-forward="false" selection-start-line="32" selection-start-column="9" selection-end-line="32" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <marker date="1509077963926" expanded="false" signature="2226:2256" ph="/unchecked/" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="45" column="39" lean-forward="false" selection-start-line="45" selection-start-column="39" selection-end-line="45" selection-end-column="39" />
+        <state relative-caret-position="240">
+          <caret line="16" column="7" lean-forward="false" selection-start-line="16" selection-start-column="7" selection-end-line="16" selection-end-column="7" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ads/MySQLAccess.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="47" column="48" lean-forward="false" selection-start-line="47" selection-start-column="48" selection-end-line="47" selection-end-column="48" />
-          <folding>
-            <marker date="1509078583461" expanded="true" signature="2139:2188" ph="select adId ad" />
-            <marker date="1509078583461" expanded="true" signature="2656:2717" ph="insert into missingValue.ad... " />
-            <marker date="1509078583461" expanded="true" signature="3934:3980" ph="select * fro... ad" />
-            <marker date="1509078583461" expanded="true" signature="5615:5682" ph="select campa... campaign" />
-            <marker date="1509078583461" expanded="true" signature="6162:6211" ph="insert into missingValue.campaign... " />
-            <marker date="1509078583461" expanded="true" signature="6997:7060" ph="select budge... campaign" />
-            <marker date="1509078583461" expanded="true" signature="8044:8123" ph="update missi... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/ads/AdsSelector.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2175">
-          <caret line="153" column="49" lean-forward="false" selection-start-line="153" selection-start-column="49" selection-end-line="153" selection-end-column="49" />
+        <state relative-caret-position="0">
+          <caret line="197" column="9" lean-forward="false" selection-start-line="197" selection-start-column="9" selection-end-line="197" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/SearchAdvertising.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="77" column="0" lean-forward="false" selection-start-line="77" selection-start-column="0" selection-end-line="77" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ads/CTRModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>

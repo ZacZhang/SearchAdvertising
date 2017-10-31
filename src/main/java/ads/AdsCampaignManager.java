@@ -1,6 +1,7 @@
 package ads;
 
 import ads.models.Ad;
+import ads.utils.MySQLAccess;
 
 import java.util.ArrayList;
 import java.util.HashSet;
